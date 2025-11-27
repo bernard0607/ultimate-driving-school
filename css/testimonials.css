@@ -1,26 +1,16 @@
 /* =================================
-   Testimonials Section - Modern & Elegant
+   Testimonials Section - Matches Computer & IT Courses
    ================================= */
 .testimonials-section {
     padding: 100px 0;
     position: relative;
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+    color: #1f2937;
     overflow: hidden;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .testimonial-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    display: none;
 }
 
 /* Center the slider container */
@@ -99,28 +89,27 @@
 }
 
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 50px 40px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     height: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(10, 74, 10, 0.1);
     max-width: 800px;
     margin: 0 auto;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 144, 0, 0.2);
-    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(10, 74, 10, 0.2);
 }
 
 .testimonial-content {
     position: relative;
     z-index: 2;
-    color: #fff;
+    color: #1f2937;
 }
 
 .testimonial-rating {
@@ -141,7 +130,7 @@
 .testimonial-content p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #e2e8f0;
+    color: #4b5563;
     margin: 0 auto 30px;
     max-width: 700px;
     position: relative;
@@ -172,8 +161,8 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ff9000, #ff6b00);
-    color: white;
+    background: rgba(10, 74, 10, 0.1);
+    color: #0a4a0a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,18 +170,25 @@
     font-weight: 600;
     margin-right: 20px;
     flex-shrink: 0;
-    box-shadow: 0 5px 15px rgba(255, 144, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(10, 74, 10, 0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .author-avatar {
+    background: #0a4a0a;
+    color: white;
+    transform: scale(1.1);
 }
 
 .author-info h4 {
     margin: 0 0 5px 0;
-    color: #fff;
+    color: #0a4a0a;
     font-size: 1.1rem;
     font-weight: 600;
 }
 
 .author-info span {
-    color: #a0aec0;
+    color: #6b7280;
     font-size: 0.9rem;
     display: block;
 }

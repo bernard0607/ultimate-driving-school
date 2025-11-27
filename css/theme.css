@@ -392,38 +392,238 @@ header.smaller .site-logo h1 a {
 }
 
 /* <<< Navigation >>> */
-.Navigation { float: right; width: 68.18%; margin-right: 11px; }
-.Navigation ul { list-style: none; margin: 0px; float: right; }
-.Navigation li { float: left; padding: 0px;  margin: 0px; height: 105px; position: relative; transition: all 0.3s ease; }
-.Navigation li a { padding: 42px 41px 36px 41px; font-size: 16px; color: #fff; font-family: 'Open Sans', sans-serif; font-weight: 400; text-decoration: none; display: block; -webkit-transition: all 0.3s ease; transition: all 0.3s ease; }
-.Navigation li span { 
-	border-bottom: solid 5px #ff9000;
-	background: rgba(56,87,122,1);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(56,87,122,1)), color-stop(0%, rgba(56,87,122,1)), color-stop(0%, rgba(56,87,122,1)), color-stop(100%, rgba(44,68,94,1)));
-	background: linear-gradient(to bottom, rgba(56,87,122,1) 0%, rgba(56,87,122,1) 0%, rgba(56,87,122,1) 0%, rgba(44,68,94,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38577a', endColorstr='#2c445e', GradientType=0 );
-	width: 100%;
-	height: 100%;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -10;
-	opacity: 0;
-	transition: all 0.5s ease;
-}
-.Navigation li:hover span, .Navigation li.active span {
-	opacity: 1;
+.Navigation { 
+    float: right; 
+    width: 68.18%; 
+    margin-right: 11px; 
+    background: linear-gradient(145deg, #083F08, #0a4a0a);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 0 15px;
 }
 
-header.smaller .Navigation li a { padding: 16px 41px; }
-header.smaller .Navigation li { height: 60px; }
+.Navigation ul { 
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
 
-.mobile { display: none;  }
-.mobile .fa { padding: 12px 14px; font-size: 31px; width: 55px; height: 55px; color: #fff; cursor: pointer; background: #ff9408; }
-.mobile .fa:hover { background: #e3860e; }
-.mobile.closed .fa-bars { display: none; }
-.mobile .fa-times { padding: 11px 15px; width: 55px; height: 55px; display: none; font-size: 31px; }
+.Navigation li { 
+    position: relative; 
+    margin: 0 2px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Navigation li a { 
+    padding: 0 25px; 
+    font-size: 15px; 
+    color: rgba(255, 255, 255, 0.95); 
+    font-family: 'Poppins', 'Open Sans', sans-serif; 
+    font-weight: 500; 
+    text-decoration: none; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Navigation li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #ffd700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+}
+
+.Navigation li a:hover,
+.Navigation li.active a {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.Navigation li a:hover::after,
+.Navigation li.active a::after {
+    width: 70%;
+}
+
+/* Mobile Menu Toggle */
+.mobile { 
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.mobile .fa { 
+    padding: 12px 14px; 
+    font-size: 24px; 
+    color: #fff; 
+    background: #0a4a0a;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.mobile .fa:hover { 
+    background: #083F08;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* Mobile Menu Styles */
+@media (max-width: 991px) {
+    .mobile { 
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+    
+    .menumobile {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: #0a4a0a;
+        z-index: 999;
+        transition: all 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        overflow-y: auto;
+        padding: 70px 0 30px;
+    }
+    
+    .menumobile.active {
+        right: 0;
+    }
+    
+    .Navigation {
+        float: none;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .Navigation ul {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 20px 0;
+    }
+    
+    .Navigation li {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .Navigation li a {
+        padding: 15px 25px;
+        font-size: 14px;
+        justify-content: flex-start;
+    }
+    
+    .Navigation li a::after {
+        display: none;
+    }
+    
+    .Navigation li a:hover,
+    .Navigation li.active a {
+        background: rgba(255,255,255,0.1);
+        padding-left: 30px;
+    }
+    
+    .mobile .fa-times {
+        display: none;
+    }
+    
+    .mobile.active .fa-bars {
+        display: none;
+    }
+    
+    .mobile.active .fa-times {
+        display: block;
+    }
+    
+    /* Overlay when mobile menu is open */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Sticky Header */
+header.smaller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 74, 10, 0.98);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    animation: slideDown 0.5s ease-out;
+    z-index: 1000;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header.smaller .Navigation {
+    background: transparent;
+    box-shadow: none;
+}
+
+header.smaller .Navigation li a {
+    padding: 0 20px;
+    height: 70px;
+}
+
+header.smaller .site-logo h1 a {
+    font-size: 20px;
+    padding: 2px 0;
+    transition: all 0.3s ease;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
 .mobile.closed .fa-times { display: block; }
 
 /* <<< Banner Section >>> */

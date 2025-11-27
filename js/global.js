@@ -58,9 +58,69 @@ function onScroll(event){
   });
 }
 
+/* Animate stats counter when element is in viewport
+--------------------------------------------*/
+function animateStats() {
+    $('.stat-number').each(function() {
+        var $this = $(this);
+        var countTo = parseInt($this.attr('data-count')) || parseInt($this.text().replace(/[^0-9]/g, ''));
+        var suffix = $this.attr('data-suffix') || '';
+        
+        if ($this.hasClass('counted')) return;
+        
+        $({ countNum: 0 }).animate(
+            { countNum: countTo },
+            {
+                duration: 2000,
+                easing: 'swing',
+                step: function() {
+                    // For percentages, round to 0 decimal places
+                    var displayNum = (suffix === '%') ? 
+                        Math.floor(this.countNum) : 
+                        Math.floor(this.countNum).toLocaleString();
+                    $this.text(displayNum + suffix);
+                },
+                complete: function() {
+                    $this.text(countTo.toLocaleString() + suffix);
+                    $this.addClass('counted');
+                }
+            }
+        );
+    });
+}
+
+/* Check if element is in viewport
+--------------------------------------------*/
+function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+/* Handle scroll events for stats animation
+--------------------------------------------*/
+function handleScrollForStats() {
+    $('.stat-number').each(function() {
+        if (isInViewport(this) && !$(this).hasClass('counted')) {
+            animateStats();
+        }
+    });
+}
+
 /* HTML Document is loaded and DOM is ready.
 --------------------------------------------*/
 $(document).ready(function(){
+    // Initialize stats animation
+    handleScrollForStats();
+    
+    // Add scroll event listener for stats animation
+    $(window).scroll(function() {
+        handleScrollForStats();
+    });
   //slider
   var sudoSlider = $("#slider").sudoSlider({
    effect: "fade",

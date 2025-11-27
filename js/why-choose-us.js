@@ -1,13 +1,131 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Animate stats counter when scrolled into view
-    const animateStats = function() {
-        const statNumbers = document.querySelectorAll('.stat-number');
-        const statsSection = document.querySelector('.stats-container');
+    // Tab functionality
+    const tabs = document.querySelectorAll('.tab');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    // Initialize first tab as active if none is active
+    if (tabs.length > 0 && !document.querySelector('.tab.active')) {
+        tabs[0].classList.add('active');
+        const firstTabId = tabs[0].getAttribute('data-tab');
+        if (firstTabId) {
+            document.getElementById(firstTabId)?.classList.add('active');
+        }
+    }
+    
+    // Tab click handler
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tabId = this.getAttribute('data-tab');
+            
+            // Remove active class from all tabs and panes
+            tabs.forEach(t => t.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding pane
+            this.classList.add('active');
+            if (tabId) {
+                const targetPane = document.getElementById(tabId);
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                }
+            }
+        });
+    });
+    
+    // Animate numbers in stats
+    const animateNumbers = () => {
+        const numberElements = document.querySelectorAll('.stat-number, .badge-number');
         
-        if (!statsSection) return;
+        const animate = (element, target, duration = 2000) => {
+            const start = 0;
+            const increment = target / (duration / 16); // 60fps
+            let current = start;
+            
+            const updateNumber = () => {
+                current += increment;
+                if (current < target) {
+                    // Format number with commas if it's a large number
+                    const displayValue = Math.ceil(current).toLocaleString();
+                    element.textContent = displayValue;
+                    requestAnimationFrame(updateNumber);
+                } else {
+                    element.textContent = target.toLocaleString();
+                }
+            };
+            
+            updateNumber();
+        };
         
-        const isInViewport = function(element) {
-            const rect = element.getBoundingClientRect();
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numberElement = entry.target;
+                    let targetNumber;
+                    
+                    // Handle different number formats (with % or +)
+                    if (numberElement.textContent.includes('%')) {
+                        targetNumber = parseInt(numberElement.textContent);
+                    } else if (numberElement.textContent.includes('+')) {
+                        targetNumber = parseInt(numberElement.textContent.replace('+', ''));
+                    } else {
+                        targetNumber = parseInt(numberElement.textContent.replace(/,/g, ''));
+                    }
+                    
+                    // Only animate if we have a valid number
+                    if (!isNaN(targetNumber)) {
+                        // Set initial value to 0
+                        if (numberElement.textContent.includes('%')) {
+                            numberElement.textContent = '0%';
+                        } else if (numberElement.textContent.includes('+')) {
+                            numberElement.textContent = '0+';
+                        } else {
+                            numberElement.textContent = '0';
+                        }
+                        
+                        // Start animation
+                        animate(numberElement, targetNumber);
+                    }
+                    
+                    // Stop observing once animated
+                    observer.unobserve(numberElement);
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+        
+        // Observe all number elements
+        numberElements.forEach(element => {
+            observer.observe(element);
+        });
+    };
+    
+    // Initialize animations when the page loads
+    if (document.querySelector('.stat-number, .badge-number')) {
+        animateNumbers();
+    }
+    
+    // Add hover effect for feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+        });
+    });
+    
+    // Play button functionality
+    const playButton = document.querySelector('.play-button');
+    if (playButton) {
+        playButton.addEventListener('click', function() {
+            // You can add video modal functionality here
+            alert('Video playback would start here. In a real implementation, this would open a modal with a video player.');
+        });
+    }
             return (
                 rect.top <= (window.innerHeight * 0.9) &&
                 rect.bottom >= 0
