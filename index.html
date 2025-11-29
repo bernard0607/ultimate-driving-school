@@ -60,6 +60,8 @@
     <link rel="stylesheet" href="css/testimonials.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Font Awesome 5.15.4 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="css/theme.css" as="style">
@@ -103,6 +105,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,400italic,800,700' rel='stylesheet' type='text/css'>    
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="css/branches.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -232,10 +235,26 @@
                 </div>
             </div>
             
-            <a href="#about" class="scroll-down" aria-label="Scroll down">
-                Scroll Down
-                <i class="fa fa-chevron-down"></i>
+            <a href="#about" class="scroll-down" aria-label="Scroll down" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #0a4a0a; font-weight: 500; z-index: 10; animation: bounce 2s infinite; text-align: center;">
+                <span style="margin-bottom: 8px; font-size: 0.9rem;">Scroll Down</span>
+                <i class="fa fa-chevron-down" style="font-size: 1.2rem;"></i>
             </a>
+            <style>
+                @keyframes bounce {
+                    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+                    40% { transform: translateY(-10px) translateX(-50%); }
+                    60% { transform: translateY(-5px) translateX(-50%); }
+                }
+                @media (max-width: 768px) {
+                    .scroll-down {
+                        bottom: 20px !important;
+                        font-size: 0.85rem;
+                    }
+                    .scroll-down i {
+                        font-size: 1rem !important;
+                    }
+                }
+            </style>
         </section>
         <!-- // End Hero Section // -->
          <div class="bgcolor"></div>
@@ -1192,25 +1211,68 @@
                         </div>
 
                         <!-- Testimonial -->
-                        <div class="feature-card feature-card-testimonial" style="grid-column: span 4;">
-                            <div class="testimonial-quote">
+                        <div class="feature-card feature-card-testimonial" style="grid-column: span 4; background: #ffffff; border: 1px solid rgba(10, 106, 10, 0.1); box-shadow: 0 8px 30px rgba(10, 106, 10, 0.08);">
+                            <div class="testimonial-quote" style="position: absolute; top: 25px; right: 25px; color: rgba(10, 106, 10, 0.08); font-size: 2.5rem; z-index: 1; line-height: 1;">
                                 <i class="fas fa-quote-right"></i>
                             </div>
-                            <blockquote>
-                                "The dual certification program at Ultimate transformed my career. The instructors were incredibly supportive, and the hands-on training prepared me perfectly for the job market. I now work as a professional driver with advanced IT skills that set me apart."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <img src="img/testimonial-1.jpg" alt="John K." class="author-img">
-                                <div class="author-info">
-                                    <h4>John K.</h4>
-                                    <span>Dual Certification Graduate, 2023</span>
-                                    <div class="testimonial-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span class="rating-text">5.0/5.0</span>
+                            <div style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; padding: 30px;">
+                                <div style="flex: 1;">
+                                    <div style="display: inline-flex; align-items: center; background: linear-gradient(90deg, #f0fdf4, #dcfce7); color: #065f46; padding: 6px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.1);">
+                                        <i class="fas fa-award" style="margin-right: 8px; font-size: 0.9em;"></i>
+                                        Dual Certification Graduate
+                                    </div>
+                                    <blockquote style="font-size: 1rem; line-height: 1.7; color: #1e293b; margin: 0 0 20px; font-style: normal; position: relative; padding: 0; font-weight: 400;">
+                                        "The comprehensive training at Ultimate transformed my career path. The perfect blend of defensive driving and IT skills gave me a competitive advantage in the logistics industry."
+                                    </blockquote>
+                                    <div style="background: #f8fafc; padding: 18px; border-radius: 12px; margin: 25px 0; border: 1px solid #e2e8f0;">
+                                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                            <i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px; font-size: 1em;"></i>
+                                            <span style="font-weight: 600; color: #0f172a; font-size: 0.95rem;">Skills Gained:</span>
+                                        </div>
+                                        <ul style="margin: 0; padding-left: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 15px; list-style: none;">
+                                            <li style="display: flex; align-items: center; font-size: 0.9rem; color: #475569; line-height: 1.5;">
+                                                <span style="display: inline-block; width: 6px; height: 6px; background: #10b981; border-radius: 50%; margin-right: 10px;"></span>
+                                                <span>Advanced Driving</span>
+                                            </li>
+                                            <li style="display: flex; align-items: center; font-size: 0.9rem; color: #475569; line-height: 1.5;">
+                                                <span style="display: inline-block; width: 6px; height: 6px; background: #10b981; border-radius: 50%; margin-right: 10px;"></span>
+                                                <span>IT Certification</span>
+                                            </li>
+                                            <li style="display: flex; align-items: center; font-size: 0.9rem; color: #475569; line-height: 1.5;">
+                                                <span style="display: inline-block; width: 6px; height: 6px; background: #10b981; border-radius: 50%; margin-right: 10px;"></span>
+                                                <span>Fleet Management</span>
+                                            </li>
+                                            <li style="display: flex; align-items: center; font-size: 0.9rem; color: #475569; line-height: 1.5;">
+                                                <span style="display: inline-block; width: 6px; height: 6px; background: #10b981; border-radius: 50%; margin-right: 10px;"></span>
+                                                <span>Customer Service</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="testimonial-author" style="margin-top: auto; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #0a6a0a, #0a4a0a); display: flex; align-items: center; justify-content: center; margin-right: 15px; overflow: hidden;">
+                                            <span style="color: white; font-weight: 600; font-size: 1.2rem;">JM</span>
+                                        </div>
+                                        <div class="author-info" style="flex: 1;">
+                                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                                                <div>
+                                                    <h4 style="margin: 0 0 2px; font-size: 1.1rem; color: #0f172a; font-weight: 600;">John Mwangi</h4>
+                                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 5px;">Fleet Manager | 2023 Graduate</div>
+                                                </div>
+                                                <div class="testimonial-rating" style="color: #f59e0b; font-size: 0.9rem; white-space: nowrap;">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 15px; font-size: 0.9rem; color: #475569; line-height: 1.6; background: #f8fafc; padding: 12px 15px; border-radius: 8px; border-right: 3px solid #0a6a0a;">
+                                        <i class="fas fa-quote-left" style="color: #0a6a0a; opacity: 0.5; margin-right: 5px;"></i>
+                                        The practical skills I gained opened doors to opportunities I never imagined possible.
                                     </div>
                                 </div>
                             </div>
@@ -1268,6 +1330,207 @@
             </section>
             <!-- End Why Choose Us Section -->
             <!-- // End Why Choose Us Section // -->
+            
+            <!-- Founder's Message Section -->
+            <section class="founder-section" style="padding: 100px 0; background: #fff; position: relative; overflow: hidden;">
+                <div class="founder-overlay"></div>
+                <div class="founder-shape-1"></div>
+                <div class="founder-shape-2"></div>
+                
+                <div class="Center">
+                    <div class="section-header" style="text-align: center; margin-bottom: 60px; position: relative; z-index: 1;">
+                        <span class="section-subtitle" style="color: #0a6a0a; font-weight: 600; letter-spacing: 1px; display: block; margin-bottom: 15px;">A Message From Our Founder</span>
+                        <h2 class="section-title" style="color: #0f172a; margin: 0 0 20px; font-size: 2.5rem; line-height: 1.2;">Driving Excellence, Empowering Futures</h2>
+                        <div class="header-divider" style="height: 3px; width: 80px; background: linear-gradient(90deg, #0a4a0a, #0a6a0a); margin: 0 auto; border-radius: 3px;"></div>
+                    </div>
+                    
+                    <div class="founder-container" style="max-width: 1200px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 15px 40px rgba(10, 74, 10, 0.1); overflow: hidden; display: flex; flex-wrap: wrap; position: relative; z-index: 1; transform: translateY(0); opacity: 1; transition: all 0.8s ease;">
+                        <div class="founder-image" style="flex: 1; min-width: 300px; position: relative; overflow: hidden; min-height: 500px; background: #f8fafc;">
+                            <div class="founder-img-overlay"></div>
+                            <img src="img/founder.jpg" alt="Founder - Ultimate Defensive Driving School" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                            <div class="founder-signature" style="position: absolute; bottom: 40px; left: 40px; opacity: 0; transform: translateY(20px); transition: all 0.6s ease 0.3s;">
+                                <img src="img/signature.png" alt="Founder's Signature" style="height: 50px; margin-bottom: 10px; display: block;">
+                                <h4 style="color: #0a4a0a; margin: 0; font-size: 1.2rem;">John Mwangi</h4>
+                                <p style="color: #64748b; margin: 5px 0 0; font-size: 0.9rem;">Founder & CEO</p>
+                            </div>
+                        </div>
+                        
+                        <div class="founder-content" style="flex: 1.2; min-width: 300px; padding: 60px 50px; position: relative;">
+                            <div class="quote-icon" style="position: absolute; top: 40px; right: 40px; color: rgba(10, 74, 10, 0.1); font-size: 5rem; line-height: 1;">"</div>
+                            
+                            <div class="founder-message" style="margin-bottom: 30px; position: relative; z-index: 2;">
+                                <p style="font-size: 1.1rem; line-height: 1.8; color: #334155; margin-bottom: 25px; font-style: italic; position: relative; padding-left: 20px; border-left: 3px solid #0a6a0a;">
+                                    At Ultimate Defensive Driving School, we believe that education is the most powerful tool for transformation. What began as a vision to create safer roads has evolved into a comprehensive institution that not only teaches defensive driving but also empowers individuals with essential digital skills for the modern world.
+                                </p>
+                                
+                                <p style="font-size: 1.1rem; line-height: 1.8; color: #334155; margin-bottom: 25px;">
+                                    Our journey started with a simple mission: to reduce road accidents through quality driver education. Over the years, we've expanded our vision to include computer education, recognizing that today's professionals need both road safety awareness and digital literacy to thrive.
+                                </p>
+                                
+                                <p style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                                    Every day, I'm inspired by our students' success stories and the positive impact we're making in our community. As we continue to grow, our commitment remains unchanged: to provide exceptional education that transforms lives and creates safer, more skilled professionals.
+                                </p>
+                            </div>
+                            
+                            <div class="founder-achievements" style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 30px;">
+                                <div class="achievement-item" style="flex: 1; min-width: 120px; text-align: center; padding: 15px; background: #f8fafc; border-radius: 8px; transition: all 0.3s ease;">
+                                    <div class="achievement-number" style="font-size: 2rem; font-weight: 700; color: #0a4a0a; line-height: 1.2; margin-bottom: 5px;">15+</div>
+                                    <div class="achievement-label" style="font-size: 0.9rem; color: #64748b;">Years Experience</div>
+                                </div>
+                                
+                                <div class="achievement-item" style="flex: 1; min-width: 120px; text-align: center; padding: 15px; background: #f8fafc; border-radius: 8px; transition: all 0.3s ease;">
+                                    <div class="achievement-number" style="font-size: 2rem; font-weight: 700; color: #0a4a0a; line-height: 1.2; margin-bottom: 5px;">10,000+</div>
+                                    <div class="achievement-label" style="font-size: 0.9rem; color: #64748b;">Students Trained</div>
+                                </div>
+                                
+                                <div class="achievement-item" style="flex: 1; min-width: 120px; text-align: center; padding: 15px; background: #f8fafc; border-radius: 8px; transition: all 0.3s ease;">
+                                    <div class="achievement-number" style="font-size: 2rem; font-weight: 700; color: #0a4a0a; line-height: 1.2; margin-bottom: 5px;">98%</div>
+                                    <div class="achievement-label" style="font-size: 0.9rem; color: #64748b;">Pass Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <style>
+                    .founder-section {
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .founder-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,253,244,0.9) 100%);
+                        z-index: 0;
+                    }
+                    
+                    .founder-shape-1, .founder-shape-2 {
+                        position: absolute;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, rgba(10, 106, 10, 0.1) 0%, rgba(10, 74, 10, 0.05) 100%);
+                        z-index: 0;
+                    }
+                    
+                    .founder-shape-1 {
+                        width: 400px;
+                        height: 400px;
+                        top: -150px;
+                        right: -150px;
+                        animation: float 8s ease-in-out infinite;
+                    }
+                    
+                    .founder-shape-2 {
+                        width: 300px;
+                        height: 300px;
+                        bottom: -100px;
+                        left: -100px;
+                        animation: float 10s ease-in-out infinite reverse;
+                    }
+                    
+                    .founder-container:hover .founder-image img {
+                        transform: scale(1.05);
+                    }
+                    
+                    .founder-container:hover .founder-signature {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    
+                    .achievement-item:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+                    }
+                    
+                    @keyframes float {
+                        0% { transform: translateY(0px); }
+                        50% { transform: translateY(-20px); }
+                        100% { transform: translateY(0px); }
+                    }
+                    
+                    @media (max-width: 992px) {
+                        .founder-container {
+                            flex-direction: column;
+                        }
+                        
+                        .founder-image {
+                            min-height: 400px !important;
+                        }
+                        
+                        .founder-content {
+                            padding: 40px 30px !important;
+                        }
+                    }
+                </style>
+                
+                <script>
+                    // Add intersection observer for scroll animations
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const founderContainer = document.querySelector('.founder-container');
+                        
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    founderContainer.style.opacity = '1';
+                                    founderContainer.style.transform = 'translateY(0)';
+                                }
+                            });
+                        }, { threshold: 0.1 });
+                        
+                        if (founderContainer) {
+                            observer.observe(founderContainer);
+                        }
+                    });
+                </script>
+                
+                <!-- Social Media Icons -->
+                <div class="social-icons-container" style="margin-top: 60px; text-align: center; position: relative; z-index: 2;">
+                    <h3 style="color: #0a4a0a; margin-bottom: 20px; font-size: 1.5rem;">Connect With Us</h3>
+                    <div class="social-icons" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                        <a href="https://facebook.com/ultimatedefensivedriving" target="_blank" class="social-icon" style="width: 50px; height: 50px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; color: #0a4a0a; font-size: 1.5rem; transition: all 0.3s ease; text-decoration: none; border: 1px solid rgba(10, 74, 10, 0.1);">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/ultimatedrivingke" target="_blank" class="social-icon" style="width: 50px; height: 50px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; color: #0a4a0a; font-size: 1.5rem; transition: all 0.3s ease; text-decoration: none; border: 1px solid rgba(10, 74, 10, 0.1);">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/ultimatedrivingke" target="_blank" class="social-icon" style="width: 50px; height: 50px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; color: #0a4a0a; font-size: 1.5rem; transition: all 0.3s ease; text-decoration: none; border: 1px solid rgba(10, 74, 10, 0.1);">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/254723013017" target="_blank" class="social-icon" style="width: 50px; height: 50px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; color: #0a4a0a; font-size: 1.5rem; transition: all 0.3s ease; text-decoration: none; border: 1px solid rgba(10, 74, 10, 0.1);">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://youtube.com/ultimatedrivingke" target="_blank" class="social-icon" style="width: 50px; height: 50px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; color: #0a4a0a; font-size: 1.5rem; transition: all 0.3s ease; text-decoration: none; border: 1px solid rgba(10, 74, 10, 0.1);">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/ultimatedrivingke" target="_blank" class="social-icon" style="width: 50px; height: 50px; border-radius: 50%; background: #f0fdf4; display: flex; align-items: center; justify-content: center; color: #0a4a0a; font-size: 1.5rem; transition: all 0.3s ease; text-decoration: none; border: 1px solid rgba(10, 74, 10, 0.1);">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    
+                    <style>
+                        .social-icon:hover {
+                            background: #0a4a0a !important;
+                            color: white !important;
+                            transform: translateY(-5px);
+                            box-shadow: 0 10px 20px rgba(10, 74, 10, 0.2);
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .social-icons {
+                                gap: 15px !important;
+                            }
+                            .social-icon {
+                                width: 45px !important;
+                                height: 45px !important;
+                                font-size: 1.3rem !important;
+                            }
+                        }
+                    </style>
+                </div>
+            </section>
             
             <!-- Features Section -->
             <section class="features-section" style="padding: 80px 0; background: #f8f9fa;">
@@ -1663,272 +1926,634 @@
         <section class="branches-section" id="branches" style="background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%); padding: 100px 0; position: relative; overflow: hidden;">
             <div class="branches-container" style="max-width: 1280px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1;">
                 <div class="section-header" style="text-align: center; margin-bottom: 70px; position: relative;">
-                    <span style="display: block; color: #0a4a0a; font-weight: 600; letter-spacing: 2px; margin-bottom: 15px; font-size: 1.1rem;">OUR LOCATIONS</span>
+                    <span style="display: inline-block; color: #0a6a0a; background: rgba(10, 106, 10, 0.1); padding: 8px 20px; border-radius: 50px; font-weight: 600; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.9rem; text-transform: uppercase;">Our Locations</span>
                     <h2 class="section-title" style="font-size: 2.75rem; color: #0f172a; margin-bottom: 20px; line-height: 1.2; position: relative; display: inline-block;">
                         Find Us Near You
-                        <span style="content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a); border-radius: 3px;"></span>
+                        <span style="content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a); border-radius: 4px;"></span>
                     </h2>
                     <p class="section-subtitle" style="color: #64748b; max-width: 700px; margin: 25px auto 0; line-height: 1.7; font-size: 1.1rem;">
                         We're conveniently located across the city to serve you better. Visit any of our modern facilities for professional driving lessons and exceptional service.
                     </p>
                 </div>
 
-                <div class="branches-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; margin-top: 30px;">
-                    <!-- Branch 1 -->
-                    <div class="branch-card" style="background: white; border-radius: 16px; padding: 35px; box-shadow: 0 10px 30px rgba(10, 74, 10, 0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); position: relative; overflow: hidden; transform: translateY(0);">
-                        <div style="position: absolute; top: 0; right: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a);"></div>
-                        <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative;">
-                            <div style="width: 50px; height: 50px; background: rgba(10, 74, 10, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fa fa-map-marker-alt" style="color: #0a4a0a; font-size: 1.3rem;"></i>
-                            </div>
-                            <h3 style="color: #0f172a; font-size: 1.5rem; margin: 0; font-weight: 700; letter-spacing: -0.5px;">SUNTON</h3>
-                        </div>
-                        <div class="branch-info" style="margin-bottom: 28px; padding-left: 8px; border-left: 2px solid #e2e8f0; margin-left: 12px;">
-                            <div style="margin-bottom: 18px; position: relative; padding-left: 25px;">
-                                <i class="fa fa-map-marker" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Location</div>
-                                    <div style="color: #334155; font-weight: 500; line-height: 1.5;">Next to Kwa Mafuta Stage</div>
-                                </div>
-                            </div>
-                            <div style="position: relative; padding-left: 25px;">
-                                <i class="fa fa-phone-alt" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Call Us</div>
-                                    <a href="tel:0723013017" style="color: #0a4a0a; text-decoration: none; font-weight: 600; transition: color 0.2s ease; display: inline-block;">
-                                        0723 013 017
-                                        <i class="fa fa-phone-volume" style="margin-left: 8px; font-size: 0.9em; opacity: 0.8;"></i>
-                                    </a>
-                                </div>
+                <div class="branches-grid">
+                    <!-- Branch 1 - Sunton -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="img/branch-1.jpg" alt="Sunton Branch">
+                            <div class="branch-overlay"></div>
+                            <div class="branch-status">
+                                <i class="fas fa-circle"></i>
+                                <span class="status-text">Open Now</span>
+                                <span class="status-details"></span>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap;">
-                            <a href="https://maps.google.com/?q=SUNTON+NEXT+TO+KWA+MAFUTA+STAGE" target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #0a4a0a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(10, 74, 10, 0.1), 0 2px 4px -1px rgba(10, 74, 10, 0.06);">
-                                <i class="fa fa-directions" style="font-size: 0.9em;"></i>
-                                <span>Directions</span>
-                            </a>
-                            <a href="https://wa.me/254723013017?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Sunton%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.1), 0 2px 4px -1px rgba(37, 211, 102, 0.06);">
-                                <i class="fab fa-whatsapp" style="font-size: 1.1em;"></i>
-                                <span>WhatsApp</span>
-                            </a>
+                        <div class="branch-content">
+                            <div class="branch-header">
+                                <div class="branch-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3 class="branch-title">SUNTON BRANCH</h3>
+                            </div>
+                            <div class="branch-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <div class="info-label">Location</div>
+                                        <div class="info-value">Sunton Shopping Center</div>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <div>
+                                        <div class="info-label">Call Us</div>
+                                        <a href="tel:0723013017" class="info-value">
+                                            0723 013 017
+                                            <i class="fa fa-phone-volume"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <div>
+                                        <div class="info-label">Opening Hours</div>
+                                        <div class="info-value">Mon - Sun: 8:00 AM - 6:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="branch-buttons">
+                                <a href="https://maps.google.com/?q=Sunton+Shopping+Center" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-route"></i>
+                                    <span>Directions</span>
+                                </a>
+                                <a href="https://wa.me/254723013017?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Sunton%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" class="btn btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Branch 2 -->
-                    <div class="branch-card" style="background: white; border-radius: 16px; padding: 35px; box-shadow: 0 10px 30px rgba(10, 74, 10, 0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); position: relative; overflow: hidden; transform: translateY(0);">
-                        <div style="position: absolute; top: 0; right: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a);"></div>
-                        <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative;">
-                            <div style="width: 50px; height: 50px; background: rgba(10, 74, 10, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fa fa-map-marker-alt" style="color: #0a4a0a; font-size: 1.3rem;"></i>
+                    <!-- Branch 2 - Mwiki -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="img/branch-2.jpg" alt="Mwiki Branch">
+                            <div class="branch-overlay"></div>
+                            <div class="branch-status">
+                                <i class="fas fa-circle"></i>
+                                <span class="status-text">Open Now</span>
+                                <span class="status-details"></span>
                             </div>
-                            <h3 style="color: #0f172a; font-size: 1.5rem; margin: 0; font-weight: 700; letter-spacing: -0.5px;">MWIKI</h3>
                         </div>
-                        <div class="branch-info" style="margin-bottom: 28px; padding-left: 8px; border-left: 2px solid #e2e8f0; margin-left: 12px;">
-                            <div style="margin-bottom: 18px; position: relative; padding-left: 25px;">
-                                <i class="fa fa-map-marker" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Location</div>
-                                    <div style="color: #334155; font-weight: 500; line-height: 1.5;">Next to Rongai Supermarket (Medi Plaza)</div>
+                        <div class="branch-content">
+                            <div class="branch-header">
+                                <div class="branch-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3 class="branch-title">MWIKI</h3>
+                            </div>
+                            <div class="branch-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <div class="info-label">Location</div>
+                                        <div class="info-value">Mwiki Shopping Center</div>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <div>
+                                        <div class="info-label">Call Us</div>
+                                        <a href="tel:0743555847" class="info-value">
+                                            0743 555 847
+                                            <i class="fa fa-phone-volume"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <div>
+                                        <div class="info-label">Opening Hours</div>
+                                        <div class="info-value">Mon - Sun: 8:00 AM - 6:00 PM</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div style="position: relative; padding-left: 25px;">
-                                <i class="fa fa-phone-alt" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Call Us</div>
-                                    <a href="tel:0743555847" style="color: #0a4a0a; text-decoration: none; font-weight: 600; transition: color 0.2s ease; display: inline-block;">
-                                        0743 555 847
-                                        <i class="fa fa-phone-volume" style="margin-left: 8px; font-size: 0.9em; opacity: 0.8;"></i>
-                                    </a>
-                                </div>
+                            <div class="branch-buttons">
+                                <a href="https://maps.google.com/?q=Mwiki+Shopping+Center" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-route"></i>
+                                    <span>Directions</span>
+                                </a>
+                                <a href="https://wa.me/254743555847?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Mwiki%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" class="btn btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
                             </div>
-                        </div>
-                        <div style="display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap;">
-                            <a href="https://maps.google.com/?q=MWIKI+NEXT+TO+RONGAI+SUPERMARKET+MEDI+PLAZA" target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #0a4a0a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(10, 74, 10, 0.1), 0 2px 4px -1px rgba(10, 74, 10, 0.06);">
-                                <i class="fa fa-directions" style="font-size: 0.9em;"></i>
-                                <span>Directions</span>
-                            </a>
-                            <a href="https://wa.me/254743555847?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Mwiki%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.1), 0 2px 4px -1px rgba(37, 211, 102, 0.06);">
-                                <i class="fab fa-whatsapp" style="font-size: 1.1em;"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Branch 3 -->
-                    <div class="branch-card" style="background: white; border-radius: 16px; padding: 35px; box-shadow: 0 10px 30px rgba(10, 74, 10, 0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); position: relative; overflow: hidden; transform: translateY(0);">
-                        <div style="position: absolute; top: 0; right: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a);"></div>
-                        <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative;">
-                            <div style="width: 50px; height: 50px; background: rgba(10, 74, 10, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fa fa-map-marker-alt" style="color: #0a4a0a; font-size: 1.3rem;"></i>
-                            </div>
-                            <h3 style="color: #0f172a; font-size: 1.5rem; margin: 0; font-weight: 700; letter-spacing: -0.5px;">GITHURAI 45</h3>
-                        </div>
-                        <div class="branch-info" style="margin-bottom: 28px; padding-left: 8px; border-left: 2px solid #e2e8f0; margin-left: 12px;">
-                            <div style="margin-bottom: 18px; position: relative; padding-left: 25px;">
-                                <i class="fa fa-map-marker" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Location</div>
-                                    <div style="color: #334155; font-weight: 500; line-height: 1.5;">Next to Penda Medical</div>
-                                </div>
-                            </div>
-                            <div style="position: relative; padding-left: 25px;">
-                                <i class="fa fa-phone-alt" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Call Us</div>
-                                    <a href="tel:0723013017" style="color: #0a4a0a; text-decoration: none; font-weight: 600; transition: color 0.2s ease; display: inline-block;">
-                                        0723 013 017
-                                        <i class="fa fa-phone-volume" style="margin-left: 8px; font-size: 0.9em; opacity: 0.8;"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap;">
-                            <a href="https://maps.google.com/?q=GITHURAI+45+NEXT+TO+PENDA+MEDICAL" target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #0a4a0a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(10, 74, 10, 0.1), 0 2px 4px -1px rgba(10, 74, 10, 0.06);">
-                                <i class="fa fa-directions" style="font-size: 0.9em;"></i>
-                                <span>Directions</span>
-                            </a>
-                            <a href="https://wa.me/254723013017?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Githurai%2045%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.1), 0 2px 4px -1px rgba(37, 211, 102, 0.06);">
-                                <i class="fab fa-whatsapp" style="font-size: 1.1em;"></i>
-                                <span>WhatsApp</span>
-                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="branches-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
-                    <!-- Branch 4 -->
-                    <div class="branch-card" style="background: white; border-radius: 16px; padding: 35px; box-shadow: 0 10px 30px rgba(10, 74, 10, 0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); position: relative; overflow: hidden; transform: translateY(0);">
-                        <div style="position: absolute; top: 0; right: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a);"></div>
-                        <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative;">
-                            <div style="width: 50px; height: 50px; background: rgba(10, 74, 10, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fa fa-map-marker-alt" style="color: #0a4a0a; font-size: 1.3rem;"></i>
-                            </div>
-                            <h3 style="color: #0f172a; font-size: 1.5rem; margin: 0; font-weight: 700; letter-spacing: -0.5px;">GITHURAI 44 A</h3>
-                        </div>
-                        <div class="branch-info" style="margin-bottom: 28px; padding-left: 8px; border-left: 2px solid #e2e8f0; margin-left: 12px;">
-                            <div style="margin-bottom: 18px; position: relative; padding-left: 25px;">
-                                <i class="fa fa-map-marker" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Location</div>
-                                    <div style="color: #334155; font-weight: 500; line-height: 1.5;">Next to Equity Bank</div>
-                                </div>
-                            </div>
-                            <div style="position: relative; padding-left: 25px;">
-                                <i class="fa fa-phone-alt" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Call Us</div>
-                                    <a href="tel:0745532270" style="color: #0a4a0a; text-decoration: none; font-weight: 600; transition: color 0.2s ease; display: inline-block;">
-                                        0745 532 270
-                                        <i class="fa fa-phone-volume" style="margin-left: 8px; font-size: 0.9em; opacity: 0.8;"></i>
-                                    </a>
-                                </div>
+                <div class="branches-grid">
+                    <!-- Branch 4 - Githurai 44A -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="img/branch-4.jpg" alt="Githurai 44A Branch">
+                            <div class="branch-overlay"></div>
+                            <div class="branch-status">
+                                <i class="fas fa-circle"></i>
+                                <span class="status-text">Open Now</span>
+                                <span class="status-details"></span>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap;">
-                            <a href="https://maps.google.com/?q=GITHURAI+44+A+NEXT+TO+EQUITY+BANK" target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #0a4a0a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(10, 74, 10, 0.1), 0 2px 4px -1px rgba(10, 74, 10, 0.06);">
-                                <i class="fa fa-directions" style="font-size: 0.9em;"></i>
-                                <span>Directions</span>
-                            </a>
-                            <a href="https://wa.me/254745532270?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Githurai%2044A%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.1), 0 2px 4px -1px rgba(37, 211, 102, 0.06);">
-                                <i class="fab fa-whatsapp" style="font-size: 1.1em;"></i>
-                                <span>WhatsApp</span>
-                            </a>
+                        <div class="branch-content">
+                            <div class="branch-header">
+                                <div class="branch-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3 class="branch-title">GITHURAI 44A</h3>
+                            </div>
+                            <div class="branch-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <div class="info-label">Location</div>
+                                        <div class="info-value">Next to Equity Bank, Unaitas Building</div>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <div>
+                                        <div class="info-label">Call Us</div>
+                                        <a href="tel:0745532270" class="info-value">
+                                            0745 532 270
+                                            <i class="fa fa-phone-volume"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <div>
+                                        <div class="info-label">Opening Hours</div>
+                                        <div class="info-value">Mon - Sun: 8:00 AM - 6:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="branch-buttons">
+                                <a href="https://maps.google.com/?q=GITHURAI+44+A+NEXT+TO+EQUITY+BANK+UNAITAS+BUILDING" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-route"></i>
+                                    <span>Directions</span>
+                                </a>
+                                <a href="https://wa.me/254745532270?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Githurai%2044A%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" class="btn btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Branch 5 -->
-                    <div class="branch-card" style="background: white; border-radius: 16px; padding: 35px; box-shadow: 0 10px 30px rgba(10, 74, 10, 0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); position: relative; overflow: hidden; transform: translateY(0);">
-                        <div style="position: absolute; top: 0; right: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a);"></div>
-                        <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative;">
-                            <div style="width: 50px; height: 50px; background: rgba(10, 74, 10, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fa fa-map-marker-alt" style="color: #0a4a0a; font-size: 1.3rem;"></i>
-                            </div>
-                            <h3 style="color: #0f172a; font-size: 1.5rem; margin: 0; font-weight: 700; letter-spacing: -0.5px;">GITHURAI 44 B</h3>
-                        </div>
-                        <div class="branch-info" style="margin-bottom: 28px; padding-left: 8px; border-left: 2px solid #e2e8f0; margin-left: 12px;">
-                            <div style="margin-bottom: 18px; position: relative; padding-left: 25px;">
-                                <i class="fa fa-map-marker" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Location</div>
-                                    <div style="color: #334155; font-weight: 500; line-height: 1.5;">Opposite Kiambu Stage</div>
-                                </div>
-                            </div>
-                            <div style="position: relative; padding-left: 25px;">
-                                <i class="fa fa-phone-alt" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Call Us</div>
-                                    <a href="tel:0796332258" style="color: #0a4a0a; text-decoration: none; font-weight: 600; transition: color 0.2s ease; display: inline-block;">
-                                        0796 332 258
-                                        <i class="fa fa-phone-volume" style="margin-left: 8px; font-size: 0.9em; opacity: 0.8;"></i>
-                                    </a>
-                                </div>
+                    <!-- Branch 5 - Githurai 44B -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="img/branch-5.jpg" alt="Githurai 44B Branch">
+                            <div class="branch-overlay"></div>
+                            <div class="branch-status">
+                                <i class="fas fa-circle"></i>
+                                <span class="status-text">Open Now</span>
+                                <span class="status-details"></span>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap;">
-                            <a href="https://maps.google.com/?q=GITHURAI+44+B+OPPOSITE+KIAMBU+STAGE" target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #0a4a0a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(10, 74, 10, 0.1), 0 2px 4px -1px rgba(10, 74, 10, 0.06);">
-                                <i class="fa fa-directions" style="font-size: 0.9em;"></i>
-                                <span>Directions</span>
-                            </a>
-                            <a href="https://wa.me/254796332258?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Githurai%2044B%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.1), 0 2px 4px -1px rgba(37, 211, 102, 0.06);">
-                                <i class="fab fa-whatsapp" style="font-size: 1.1em;"></i>
-                                <span>WhatsApp</span>
-                            </a>
+                        <div class="branch-content">
+                            <div class="branch-header">
+                                <div class="branch-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3 class="branch-title">GITHURAI 44B</h3>
+                            </div>
+                            <div class="branch-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <div class="info-label">Location</div>
+                                        <div class="info-value">Opposite Kiambu Stage</div>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <div>
+                                        <div class="info-label">Call Us</div>
+                                        <a href="tel:0796332258" class="info-value">
+                                            0796 332 258
+                                            <i class="fa fa-phone-volume"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <div>
+                                        <div class="info-label">Opening Hours</div>
+                                        <div class="info-value">Mon - Sun: 8:00 AM - 6:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="branch-buttons">
+                                <a href="https://maps.google.com/?q=GITHURAI+44+B+OPPOSITE+KIAMBU+STAGE" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-route"></i>
+                                    <span>Directions</span>
+                                </a>
+                                <a href="https://wa.me/254796332258?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Githurai%2044B%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" class="btn btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Branch 6 -->
-                    <div class="branch-card" style="background: white; border-radius: 16px; padding: 35px; box-shadow: 0 10px 30px rgba(10, 74, 10, 0.08); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); position: relative; overflow: hidden; transform: translateY(0);">
-                        <div style="position: absolute; top: 0; right: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a);"></div>
-                        <div style="display: flex; align-items: center; margin-bottom: 20px; position: relative;">
-                            <div style="width: 50px; height: 50px; background: rgba(10, 74, 10, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                <i class="fa fa-map-marker-alt" style="color: #0a4a0a; font-size: 1.3rem;"></i>
-                            </div>
-                            <h3 style="color: #0f172a; font-size: 1.5rem; margin: 0; font-weight: 700; letter-spacing: -0.5px;">ZIMMERMAN</h3>
-                        </div>
-                        <div class="branch-info" style="margin-bottom: 28px; padding-left: 8px; border-left: 2px solid #e2e8f0; margin-left: 12px;">
-                            <div style="margin-bottom: 18px; position: relative; padding-left: 25px;">
-                                <i class="fa fa-map-marker" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Location</div>
-                                    <div style="color: #334155; font-weight: 500; line-height: 1.5;">Next to Main Stage (Base)</div>
-                                </div>
-                            </div>
-                            <div style="position: relative; padding-left: 25px;">
-                                <i class="fa fa-phone-alt" style="color: #0a4a0a; position: absolute; left: 0; top: 3px; font-size: 1rem; opacity: 0.8;"></i>
-                                <div>
-                                    <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 3px; font-weight: 500;">Call Us</div>
-                                    <a href="tel:0797367975" style="color: #0a4a0a; text-decoration: none; font-weight: 600; transition: color 0.2s ease; display: inline-block;">
-                                        0797 367 975
-                                        <i class="fa fa-phone-volume" style="margin-left: 8px; font-size: 0.9em; opacity: 0.8;"></i>
-                                    </a>
-                                </div>
+                    <!-- Branch 6 - Zimmerman -->
+                    <div class="branch-card">
+                        <div class="branch-image">
+                            <img src="img/branch-6.jpg" alt="Zimmerman Branch">
+                            <div class="branch-overlay"></div>
+                            <div class="branch-status">
+                                <i class="fas fa-circle"></i>
+                                <span class="status-text">Open Now</span>
+                                <span class="status-details"></span>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap;">
-                            <a href="https://maps.google.com/?q=ZIMMERMAN+NEXT+TO+MAIN+STAGE+BASE" target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #0a4a0a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(10, 74, 10, 0.1), 0 2px 4px -1px rgba(10, 74, 10, 0.06);">
-                                <i class="fa fa-directions" style="font-size: 0.9em;"></i>
-                                <span>Directions</span>
-                            </a>
-                            <a href="https://wa.me/254797367975?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Zimmerman%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" 
-                               style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); flex: 1; min-width: 140px; box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.1), 0 2px 4px -1px rgba(37, 211, 102, 0.06);">
-                                <i class="fab fa-whatsapp" style="font-size: 1.1em;"></i>
-                                <span>WhatsApp</span>
-                            </a>
+                        <div class="branch-content">
+                            <div class="branch-header">
+                                <div class="branch-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3 class="branch-title">ZIMMERMAN</h3>
+                            </div>
+                            <div class="branch-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <div class="info-label">Location</div>
+                                        <div class="info-value">Next to Main Stage (Base)</div>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <div>
+                                        <div class="info-label">Call Us</div>
+                                        <a href="tel:0797367975" class="info-value">
+                                            0797 367 975
+                                            <i class="fa fa-phone-volume"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <div>
+                                        <div class="info-label">Opening Hours</div>
+                                        <div class="info-value">Mon - Sun: 8:00 AM - 6:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="branch-buttons">
+                                <a href="https://maps.google.com/?q=ZIMMERMAN+NEXT+TO+MAIN+STAGE+BASE" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-route"></i>
+                                    <span>Directions</span>
+                                </a>
+                                <a href="https://wa.me/254797367975?text=Hello%20Ultimate%20Defensive%20Driving%20School%20(Zimmerman%20Branch),%20I%20would%20like%20to%20inquire%20about%20your%20driving%20courses." target="_blank" class="btn btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Branch Location Map Modal -->
+                <div id="branchMapModal" class="branch-map-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;">
+                    <div class="modal-content" style="background: white; border-radius: 12px; max-width: 900px; width: 100%; max-height: 90vh; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);">
+                        <div class="modal-header" style="padding: 20px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+                            <h3 id="modalBranchName" style="margin: 0; color: #0f172a; font-size: 1.4rem;"></h3>
+                            <button id="closeModal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #64748b; transition: color 0.2s ease;">
+                                &times;
+                            </button>
+                        </div>
+                        <div id="branchMap" style="height: 500px; width: 100%;">
+                            <!-- Google Map will be loaded here -->
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <style>
+                /* Branch Card Hover Effects */
+                .branch-card {
+                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .branch-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 20px 40px rgba(10, 74, 10, 0.15) !important;
+                }
+                
+                .branch-card:hover .branch-image img {
+                    transform: scale(1.05);
+                }
+                
+                .branch-card:hover .branch-overlay {
+                    opacity: 0.7 !important;
+                }
+                
+                /* Branch Status Animation */
+                .branch-status {
+                    animation: pulse 2s infinite;
+                }
+                
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+                
+                /* Button Hover Effects */
+                .branch-card a[href^="https://maps"],
+                .branch-card a[href^="tel:"] {
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                }
+                
+                .branch-card a[href^="https://maps"]:hover {
+                    background: #083e08 !important;
+                    transform: translateY(-2px);
+                    box-shadow: 0 7px 14px rgba(10, 74, 10, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1) !important;
+                }
+                
+                .branch-card a[href^="tel:"]:hover {
+                    background: #e0f7ea !important;
+                    transform: translateY(-2px);
+                    box-shadow: 0 7px 14px rgba(10, 74, 10, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05) !important;
+                }
+                
+                /* Responsive Adjustments */
+                @media (max-width: 1024px) {
+                    .branches-grid {
+                        gap: 25px !important;
+                    }
+                    
+                    .branch-card {
+                        padding: 0 !important;
+                    }
+                    
+                    .branch-image {
+                        height: 160px !important;
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    .section-header h2 {
+                        font-size: 2.2rem !important;
+                    }
+                    
+                    .branches-grid {
+                        grid-template-columns: 1fr !important;
+                        max-width: 500px;
+                        margin: 0 auto !important;
+                    }
+                    
+                    .branch-card {
+                        margin-bottom: 10px;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .section-header h2 {
+                        font-size: 1.8rem !important;
+                    }
+                    
+                    .branch-card {
+                        border-radius: 12px !important;
+                    }
+                    
+                    .branch-image {
+                        height: 140px !important;
+                    }
+                }
+            </style>
+            
+            <script>
+                // Initialize Google Maps for each branch
+                function initBranchMaps() {
+                    // Check if Google Maps API is loaded
+                    if (typeof google === 'undefined' || !google.maps) {
+                        console.warn('Google Maps API not loaded');
+                        return;
+                    }
+                    
+                    // Initialize maps for each branch
+                    const branches = [
+                        { id: 'suntan', name: 'SUNTAN BRANCH', lat: -1.2921, lng: 36.8219, address: 'Next to Kwa Mafuta Stage' },
+                        { id: 'kikuyu', name: 'KIKUYU BRANCH', lat: -1.2532, lng: 36.6619, address: 'Opposite Kikuyu Police Station' },
+                        { id: 'kiserian', name: 'KISERIAN BRANCH', lat: -1.4833, lng: 36.6667, address: 'Kiserian Town, Near KCB Bank' }
+                    ];
+                    
+                    // Create a map for each branch
+                    branches.forEach(branch => {
+                        const mapElement = document.getElementById(`map-${branch.id}`);
+                        if (mapElement) {
+                            const map = new google.maps.Map(mapElement, {
+                                center: { lat: branch.lat, lng: branch.lng },
+                                zoom: 15,
+                                styles: [
+                                    {
+                                        "featureType": "administrative",
+                                        "elementType": "labels.text.fill",
+                                        "stylers": [{"color": "#444444"}]
+                                    },
+                                    {
+                                        "featureType": "landscape",
+                                        "elementType": "all",
+                                        "stylers": [{"color": "#f2f2f2"}]
+                                    },
+                                    {
+                                        "featureType": "poi",
+                                        "elementType": "all",
+                                        "stylers": [{"visibility": "off"}]
+                                    },
+                                    {
+                                        "featureType": "road",
+                                        "elementType": "all",
+                                        "stylers": [
+                                            {"saturation": -100},
+                                            {"lightness": 45}
+                                        ]
+                                    },
+                                    {
+                                        "featureType": "road.highway",
+                                        "elementType": "all",
+                                        "stylers": [{"visibility": "simplified"}]
+                                    },
+                                    {
+                                        "featureType": "road.arterial",
+                                        "elementType": "labels.icon",
+                                        "stylers": [{"visibility": "off"}]
+                                    },
+                                    {
+                                        "featureType": "transit",
+                                        "elementType": "all",
+                                        "stylers": [{"visibility": "off"}]
+                                    },
+                                    {
+                                        "featureType": "water",
+                                        "elementType": "all",
+                                        "stylers": [
+                                            {"color": "#0a4a0a"},
+                                            {"visibility": "on"}
+                                        ]
+                                    }
+                                ]
+                            });
+                            
+                            new google.maps.Marker({
+                                position: { lat: branch.lat, lng: branch.lng },
+                                map: map,
+                                title: branch.name,
+                                icon: {
+                                    url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" viewBox="0 0 24 24" fill="%230a4a0a"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>`),
+                                    scaledSize: new google.maps.Size(40, 50),
+                                    origin: new google.maps.Point(0, 0),
+                                    anchor: new google.maps.Point(20, 50)
+                                }
+                            });
+                        }
+                    });
+                    
+                    // Handle modal map
+                    const modal = document.getElementById('branchMapModal');
+                    const closeModal = document.getElementById('closeModal');
+                    const modalBranchName = document.getElementById('modalBranchName');
+                    let modalMap;
+                    
+                    // Open modal with map
+                    document.querySelectorAll('.btn-view-map').forEach(btn => {
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const branchId = this.getAttribute('data-branch');
+                            const branch = branches.find(b => b.id === branchId);
+                            
+                            if (branch) {
+                                modalBranchName.textContent = branch.name;
+                                modal.style.display = 'flex';
+                                
+                                // Initialize or update map
+                                if (!modalMap) {
+                                    modalMap = new google.maps.Map(document.getElementById('branchMap'), {
+                                        center: { lat: branch.lat, lng: branch.lng },
+                                        zoom: 15,
+                                        styles: [
+                                            {
+                                                "featureType": "administrative",
+                                                "elementType": "labels.text.fill",
+                                                "stylers": [{"color": "#444444"}]
+                                            },
+                                            {
+                                                "featureType": "landscape",
+                                                "elementType": "all",
+                                                "stylers": [{"color": "#f2f2f2"}]
+                                            },
+                                            {
+                                                "featureType": "poi",
+                                                "elementType": "all",
+                                                "stylers": [{"visibility": "off"}]
+                                            },
+                                            {
+                                                "featureType": "road",
+                                                "elementType": "all",
+                                                "stylers": [
+                                                    {"saturation": -100},
+                                                    {"lightness": 45}
+                                                ]
+                                            },
+                                            {
+                                                "featureType": "road.highway",
+                                                "elementType": "all",
+                                                "stylers": [{"visibility": "simplified"}]
+                                            },
+                                            {
+                                                "featureType": "water",
+                                                "elementType": "all",
+                                                "stylers": [
+                                                    {"color": "#0a4a0a"},
+                                                    {"visibility": "on"}
+                                                ]
+                                            }
+                                        ]
+                                    });
+                                } else {
+                                    modalMap.setCenter({ lat: branch.lat, lng: branch.lng });
+                                }
+                                
+                                // Add marker
+                                new google.maps.Marker({
+                                    position: { lat: branch.lat, lng: branch.lng },
+                                    map: modalMap,
+                                    title: branch.name,
+                                    animation: google.maps.Animation.DROP
+                                });
+                                
+                                // Prevent body scroll when modal is open
+                                document.body.style.overflow = 'hidden';
+                            }
+                        });
+                    });
+                    
+                    // Close modal
+                    function closeModalFunc() {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                    
+                    closeModal.addEventListener('click', closeModalFunc);
+                    
+                    // Close when clicking outside modal content
+                    modal.addEventListener('click', function(e) {
+                        if (e.target === modal) {
+                            closeModalFunc();
+                        }
+                    });
+                    
+                    // Close with ESC key
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape' && modal.style.display === 'flex') {
+                            closeModalFunc();
+                        }
+                    });
+                }
+                
+                // Initialize maps when the page loads
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Load Google Maps API
+                    const script = document.createElement('script');
+                    script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initBranchMaps';
+                    script.async = true;
+                    script.defer = true;
+                    document.head.appendChild(script);
+                    
+                    // Add intersection observer for scroll animations
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    
+                    // Observe all branch cards
+                    document.querySelectorAll('.branch-card').forEach((card, index) => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                        observer.observe(card);
+                    });
+                });
+            </script>
         </section>
         <!-- // End Branches Section // -->
 
@@ -1975,11 +2600,11 @@
                             <div class="stat-label" style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Pass Rate</div>
                         </div>
                         <div class="stat-item" style="text-align: center; padding: 0 20px;">
-                            <div class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: #ffd700; margin-bottom: 5px; line-height: 1;">5,000+</div>
+                            <div class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: #ffd700; margin-bottom: 5px; line-height: 1;">10,000+</div>
                             <div class="stat-label" style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Students Trained</div>
                         </div>
                         <div class="stat-item" style="text-align: center; padding: 0 20px;">
-                            <div class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: #ffd700; margin-bottom: 5px; line-height: 1;">15+</div>
+                            <div class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: #ffd700; margin-bottom: 5px; line-height: 1;">10+</div>
                             <div class="stat-label" style="font-size: 0.9rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 1px;">Years Experience</div>
                         </div>
                     </div>
@@ -2395,8 +3020,9 @@
             <div class="contact-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSJ0cmFuc3BhcmVudCI+PC9yZWN0PjxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0icmdiYSgxMCwgNzQsIDEwLCAwLjAzKSI+PC9yZWN0PjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSI+PC9yZWN0Pjwvc3ZnPg=='); opacity: 0.15; z-index: 1;"></div>
             <div class="contact-container">
                 <div class="contact-content">
-                    <span class="section-subtitle" style="color: #000000;">Get in Touch</span>
-                    <h2 class="section-title" style="color: #000000;">Ready to Start Your Driving Journey?</h2>
+                    <span class="section-subtitle" style="color: #000000; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 15px;">Get in Touch</span>
+                    <h2 class="section-title" style="color: #000000; font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px;">Ready to Start Your Driving Journey?</h2>
+                    <p style="color: #4a5568; font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; max-width: 800px;">At Ultimate Defensive Driving School, we're committed to providing top-quality driving education that empowers you with confidence and safety on the road. Whether you're a beginner or looking to enhance your driving skills, our certified instructors are here to guide you every step of the way.</p>
                     <div class="header-divider">
                         <span class="divider-line" style="background-color: #000000;"></span>
                         <i class="fa fa-star" style="color: #000000;"></i>
@@ -2404,49 +3030,131 @@
                     </div>
                     <p class="contact-description" style="color: #333333;">Contact us today to book your first lesson or inquire about our courses. Our team is ready to help you take the first step towards becoming a confident driver.</p>
                     
-                    <div class="contact-info" style="color: #000000; margin-top: 30px;">
-                        <div class="info-item" style="margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease; padding: 15px; border-radius: 10px;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                            <div class="info-icon" style="background: #FF6B00; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 8px rgba(255, 107, 0, 0.2); transition: all 0.3s ease;">
-                                <i class="fa fa-map-marker" style="color: #ffffff; font-size: 1.2rem; transition: transform 0.3s ease;"></i>
+                    <div class="contact-info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+                        <!-- Location Card -->
+                        <div class="contact-card" 
+                             style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; overflow: hidden; border: 1px solid rgba(10, 106, 10, 0.1);"
+                             onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(10, 106, 10, 0.15)';" 
+                             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.05)';">
+                            <div class="icon-wrapper" 
+                                 style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(10, 106, 10, 0.1), rgba(10, 106, 10, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: #0a6a0a; transition: transform 0.3s ease;"></i>
                             </div>
-                            <div class="info-content">
-                                <h4 style="color: #0a4a0a; margin: 0 0 8px 0; font-size: 1.1rem;">Our Location</h4>
-                                <p style="color: #000000; margin: 0; line-height: 1.6;">Ultimate Defensive Driving School, Westlands, Nairobi, Kenya</p>
-                            </div>
+                            <h3 style="font-size: 1.25rem; color: #0f172a; margin: 0 0 15px 0; position: relative; display: inline-block; font-weight: 600;">
+                                Our Location
+                                <span style="content: ''; position: absolute; bottom: -5px; left: 0; width: 40px; height: 3px; background: #0a6a0a; border-radius: 2px; transition: width 0.3s ease;"></span>
+                            </h3>
+                            <p style="color: #475569; margin: 0; line-height: 1.7; font-size: 1rem; transition: color 0.3s ease;">
+                                <a href="https://maps.google.com/?q=Ultimate+Defensive+Driving+School+Westlands+Nairobi" 
+                                   target="_blank" 
+                                   style="color: inherit; text-decoration: none; display: flex; align-items: flex-start; gap: 10px;"
+                                   onmouseover="this.querySelector('span').style.color='#0a6a0a'; this.querySelector('i').style.transform='translateX(3px)';" 
+                                   onmouseout="this.querySelector('span').style.color='#475569'; this.querySelector('i').style.transform='translateX(0)';">
+                                    <i class="fas fa-external-link-alt" style="margin-top: 4px; font-size: 0.9em; color: #0a6a0a; transition: transform 0.3s ease;"></i>
+                                    <span>Ultimate Defensive Driving School, Githurai 44, next to Equity bank, UNAITAS Building </span>
+                                </a>
+                            </p>
+                            <div class="hover-effect" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(10, 106, 10, 0.03), transparent); opacity: 0; transition: opacity 0.3s ease;"></div>
                         </div>
                         
-                        <div class="info-item" style="margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px;">
-                            <div class="info-icon" style="background: #0a4a0a; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 8px rgba(10, 74, 10, 0.2); transition: all 0.3s ease;">
-                                <i class="fa fa-phone" style="color: #ffffff; font-size: 1.2rem; transition: transform 0.3s ease;"></i>
+                        <!-- Call Us Card -->
+                        <div class="contact-card" 
+                             style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; overflow: hidden; border: 1px solid rgba(16, 185, 129, 0.1);"
+                             onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(16, 185, 129, 0.15)';" 
+                             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.05)';">
+                            <div class="icon-wrapper" 
+                                 style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                <i class="fas fa-phone-alt" style="font-size: 1.5rem; color: #10b981; transition: transform 0.3s ease;"></i>
                             </div>
-                            <div class="info-content">
-                                <h4 style="color: #0a4a0a; margin: 0 0 8px 0; font-size: 1.1rem;">Call Us</h4>
-                                <p style="margin: 5px 0;"><a href="tel:+254700000000" style="color: #000000; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1a7a1a'" onmouseout="this.style.color='#000000'">+254 700 000000</a></p>
-                                <p style="margin: 5px 0;"><a href="tel:+254711111111" style="color: #000000; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#1a7a1a'" onmouseout="this.style.color='#000000'">+254 711 111111</a></p>
+                            <h3 style="font-size: 1.25rem; color: #0f172a; margin: 0 0 15px 0; position: relative; display: inline-block; font-weight: 600;">
+                                Call Us
+                                <span style="content: ''; position: absolute; bottom: -5px; left: 0; width: 40px; height: 3px; background: #10b981; border-radius: 2px; transition: width 0.3s ease;"></span>
+                            </h3>
+                            <div class="phone-numbers" style="display: flex; flex-direction: column; gap: 12px;">
+                                <a href="tel:+254700000000" 
+                                   style="color: #475569; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; padding: 10px 15px; border-radius: 8px; background: #f8fafc;"
+                                   onmouseover="this.style.background='rgba(16, 185, 129, 0.05)'; this.querySelector('span').style.color='#10b981'; this.querySelector('i').style.transform='scale(1.1)';" 
+                                   onmouseout="this.style.background='#f8fafc'; this.querySelector('span').style.color='#475569'; this.querySelector('i').style.transform='scale(1)';">
+                                    <i class="fas fa-phone" style="color: #10b981; transition: all 0.3s ease; font-size: 0.9em;"></i>
+                                    <span style="transition: all 0.3s ease; font-weight: 500;">+254 700 000000</span>
+                                    <span style="margin-left: auto; font-size: 0.75rem; background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 3px 10px; border-radius: 12px; font-weight: 500;">Primary</span>
+                                </a>
+                                <a href="tel:+254711111111" 
+                                   style="color: #475569; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; padding: 10px 15px; border-radius: 8px; background: #f8fafc;"
+                                   onmouseover="this.style.background='rgba(16, 185, 129, 0.05)'; this.querySelector('span').style.color='#10b981'; this.querySelector('i').style.transform='scale(1.1)';" 
+                                   onmouseout="this.style.background='#f8fafc'; this.querySelector('span').style.color='#475569'; this.querySelector('i').style.transform='scale(1)';">
+                                    <i class="fas fa-phone" style="color: #10b981; transition: all 0.3s ease; font-size: 0.9em;"></i>
+                                    <span style="transition: all 0.3s ease; font-weight: 500;">+254 711 111111</span>
+                                </a>
                             </div>
+                            <div class="hover-effect" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(16, 185, 129, 0.03), transparent); opacity: 0; transition: opacity 0.3s ease;"></div>
                         </div>
                         
-                        <div class="info-item" style="margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px;">
-                            <div class="info-icon" style="background: #1a7a1a; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 8px rgba(26, 122, 26, 0.2); transition: all 0.3s ease;">
-                                <i class="fa fa-envelope" style="color: #ffffff; font-size: 1.2rem; transition: transform 0.3s ease;"></i>
+                        <!-- Email Us Card -->
+                        <div class="contact-card" 
+                             style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.1);"
+                             onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(59, 130, 246, 0.15)';" 
+                             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.05)';">
+                            <div class="icon-wrapper" 
+                                 style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                <i class="fas fa-envelope" style="font-size: 1.5rem; color: #3b82f6; transition: transform 0.3s ease;"></i>
                             </div>
-                            <div class="info-content">
-                                <h4 style="color: #0a4a0a; margin: 0 0 8px 0; font-size: 1.1rem;">Email Us</h4>
-                                <p style="margin: 5px 0;"><a href="mailto:info@ultimatedefensivedriving.co.ke" style="color: #000000; text-decoration: none; transition: color 0.2s ease; word-break: break-all;" onmouseover="this.style.color='#1a7a1a'" onmouseout="this.style.color='#000000'">info@ultimatedefensivedriving.co.ke</a></p>
-                                <p style="margin: 5px 0;"><a href="mailto:bookings@ultimatedefensivedriving.co.ke" style="color: #000000; text-decoration: none; transition: color 0.2s ease; word-break: break-all;" onmouseover="this.style.color='#1a7a1a'" onmouseout="this.style.color='#000000'">bookings@ultimatedefensivedriving.co.ke</a></p>
+                            <h3 style="font-size: 1.25rem; color: #0f172a; margin: 0 0 15px 0; position: relative; display: inline-block; font-weight: 600;">
+                                Email Us
+                                <span style="content: ''; position: absolute; bottom: -5px; left: 0; width: 40px; height: 3px; background: #3b82f6; border-radius: 2px; transition: width 0.3s ease;"></span>
+                            </h3>
+                            <div class="email-addresses" style="display: flex; flex-direction: column; gap: 12px;">
+                                <a href="mailto:info@ultimatedefensivedriving.co.ke" 
+                                   style="color: #475569; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; padding: 12px 15px; border-radius: 8px; background: #f8fafc;"
+                                   onmouseover="this.style.background='rgba(59, 130, 246, 0.05)'; this.querySelector('span').style.color='#3b82f6'; this.querySelector('i').style.transform='translateY(-2px)';" 
+                                   onmouseout="this.style.background='#f8fafc'; this.querySelector('span').style.color='#475569'; this.querySelector('i').style.transform='translateY(0)';">
+                                    <i class="fas fa-envelope" style="color: #3b82f6; transition: all 0.3s ease; font-size: 0.9em; flex-shrink: 0;"></i>
+                                    <span style="transition: all 0.3s ease; word-break: break-all; font-size: 0.95rem;">info@ultimatedefensivedriving.co.ke</span>
+                                </a>
+                                <a href="mailto:bookings@ultimatedefensivedriving.co.ke" 
+                                   style="color: #475569; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; padding: 12px 15px; border-radius: 8px; background: #f8fafc;"
+                                   onmouseover="this.style.background='rgba(59, 130, 246, 0.05)'; this.querySelector('span').style.color='#3b82f6'; this.querySelector('i').style.transform='translateY(-2px)';" 
+                                   onmouseout="this.style.background='#f8fafc'; this.querySelector('span').style.color='#475569'; this.querySelector('i').style.transform='translateY(0)';">
+                                    <i class="fas fa-envelope" style="color: #3b82f6; transition: all 0.3s ease; font-size: 0.9em; flex-shrink: 0;"></i>
+                                    <span style="transition: all 0.3s ease; word-break: break-all; font-size: 0.95rem;">bookings@ultimatedefensivedriving.co.ke</span>
+                                </a>
                             </div>
+                            <div class="hover-effect" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(59, 130, 246, 0.03), transparent); opacity: 0; transition: opacity 0.3s ease;"></div>
                         </div>
                         
-                        <div class="info-item" style="margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px;">
-                            <div class="info-icon" style="background: #0a4a0a; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 8px rgba(10, 74, 10, 0.2); transition: all 0.3s ease;">
-                                <i class="fa fa-clock-o" style="color: #ffffff; font-size: 1.2rem; transition: transform 0.3s ease;"></i>
+                        <!-- Working Hours Card -->
+                        <div class="contact-card" 
+                             style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; overflow: hidden; border: 1px solid rgba(245, 158, 11, 0.1);"
+                             onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 30px rgba(245, 158, 11, 0.15)';" 
+                             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.05)';">
+                            <div class="icon-wrapper" 
+                                 style="width: 60px; height: 60px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.2)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                                <i class="fas fa-clock" style="font-size: 1.5rem; color: #f59e0b; transition: transform 0.3s ease;"></i>
                             </div>
-                            <div class="info-content">
-                                <h4 style="color: #0a4a0a; margin: 0 0 8px 0; font-size: 1.1rem;">Working Hours</h4>
-                                <p style="color: #000000; margin: 5px 0;">Monday - Friday: 7:00 AM - 8:00 PM</p>
-                                <p style="color: #000000; margin: 5px 0;">Saturday: 8:00 AM - 5:00 PM</p>
-                                <p style="color: #000000; margin: 5px 0;">Sunday: Closed</p>
+                            <h3 style="font-size: 1.25rem; color: #0f172a; margin: 0 0 20px 0; position: relative; display: inline-block; font-weight: 600;">
+                                Working Hours
+                                <span style="content: ''; position: absolute; bottom: -5px; left: 0; width: 40px; height: 3px; background: #f59e0b; border-radius: 2px; transition: width 0.3s ease;"></span>
+                            </h3>
+                            <div class="working-hours" style="display: flex; flex-direction: column; gap: 12px;">
+                                <div class="day" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #e2e8f0;">
+                                    <span style="color: #64748b; font-weight: 500;">Monday - Friday</span>
+                                    <span style="background: #fef3c7; color: #92400e; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">7:00 AM - 8:00 PM</span>
+                                </div>
+                                <div class="day" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #e2e8f0;">
+                                    <span style="color: #64748b; font-weight: 500;">Saturday</span>
+                                    <span style="background: #fef3c7; color: #92400e; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">8:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="day" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
+                                    <span style="color: #94a3b8; font-weight: 500;">Sunday</span>
+                                    <span style="background: #f1f5f9; color: #64748b; padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 500;">Closed</span>
+                                </div>
                             </div>
+                            <div class="current-status" style="margin-top: 20px; padding: 10px 15px; background: #f8fafc; border-radius: 8px; display: flex; align-items: center; gap: 10px;">
+                                <div class="status-indicator" style="width: 10px; height: 10px; background: #10b981; border-radius: 50%;"></div>
+                                <span style="color: #334155; font-size: 0.9rem; font-weight: 500;">We're currently <span style="color: #10b981; font-weight: 600;">open</span></span>
+                                <span style="margin-left: auto; color: #64748b; font-size: 0.8rem;">Closes at 8:00 PM</span>
+                            </div>
+                            <div class="hover-effect" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(245, 158, 11, 0.03), transparent); opacity: 0; transition: opacity 0.3s ease;"></div>
                         </div>
                     </div>
                     
@@ -2474,15 +3182,18 @@
                     </div>
                 </div>
                 
-                <div class="contact-form-container" style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);">
-                    <h3 style="color: #000000; font-size: 1.8rem; margin-bottom: 15px;">Send Us a Message</h3>
-                    <p class="form-intro" style="color: #333333; margin-bottom: 25px; font-size: 1.05rem;">Have questions? Fill out the form below and we'll get back to you within 24 hours.</p>
+                <div class="contact-form-container" style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1); position: sticky; top: 30px;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <div style="width: 60px; height: 4px; background: #0a4a0a; margin: 0 auto 20px; border-radius: 2px;"></div>
+                        <h3 style="color: #0a4a0a; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; letter-spacing: -0.5px;">Send Us a Message</h3>
+                        <p class="form-intro" style="color: #4a5568; margin-bottom: 25px; font-size: 1.05rem; line-height: 1.6;">Our team is ready to assist you with any questions about our courses, pricing, or scheduling. We typically respond within 2 business hours during our working days.</p>
+                    </div>
                     
                     <form id="contactForm" class="contact-form" action="https://formsubmit.co/ultimatedefensivecollege565@gmail.com" method="POST">
                         <!-- FormSubmit Configuration -->
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_subject" value="New Contact Form Submission - Ultimate Defensive Driving School">
-                        <input type="hidden" name="_autoresponse" value="Thank you for contacting Ultimate Defensive Driving School! We have received your message and will get back to you within 24 hours.">
+                        <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Ultimate Defensive Driving School! We've received your message and our team will review it shortly. For immediate assistance, feel free to call us at [Your Phone Number]. We typically respond to all inquiries within 2 business hours during our working days (Monday to Saturday, 8:00 AM to 6:00 PM). We look forward to helping you with your driving education needs!">
                         <input type="hidden" name="_next" value="thank-you.html">
                         <input type="text" name="_honey" style="display:none">
                         <div class="form-group" style="margin-bottom: 20px;">
@@ -2565,6 +3276,207 @@
         
         <!-- // End Container // -->
 	</div>
+    
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <!-- Wave Divider -->
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path fill="#0a4a0a" fill-opacity="1" d="M0,50L80,58.3C160,67,320,83,480,83.3C640,83,800,67,960,66.7C1120,67,1280,83,1360,91.7L1440,100L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+            </svg>
+        </div>
+        
+        <div class="footer-container">
+            <!-- Company Info -->
+            <div class="footer-section company-info">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-car-side"></i> Ultimate Defensive Driving School <i class="fas fa-laptop-code"></i></h3>
+                    <p class="tagline">
+                        <i class="fas fa-graduation-cap"></i> Empowering Safe Drivers & IT Professionals in Kenya
+                    </p>
+                </div>
+                <p class="company-description">
+                    <i class="fas fa-check-circle"></i> Professional Driving Courses <br>
+                    <i class="fas fa-check-circle"></i> Computer & IT Training <br>
+                    <i class="fas fa-check-circle"></i> Certified Instructors <br>
+                    <i class="fas fa-check-circle"></i> Modern Training Facilities
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook" title="Connect on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter" title="Follow us on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram" title="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube" title="Watch our videos">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section quick-links">
+                <h4 class="footer-heading"><i class="fas fa-link"></i> Quick Links</h4>
+                <ul class="footer-menu">
+                    <li class="menu-item">
+                        <a href="#home" class="menu-link">
+                            <span class="link-icon"><i class="fas fa-home"></i></span>
+                            <span class="link-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#about" class="menu-link">
+                            <span class="link-icon"><i class="fas fa-info-circle"></i></span>
+                            <span class="link-text">About Us</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#driving-courses" class="menu-link">
+                            <span class="link-icon"><i class="fas fa-car"></i></span>
+                            <span class="link-text">Driving Courses</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#computer-courses" class="menu-link">
+                            <span class="link-icon"><i class="fas fa-laptop-code"></i></span>
+                            <span class="link-text">Computer Courses</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#testimonials" class="menu-link">
+                            <span class="link-icon"><i class="fas fa-quote-left"></i></span>
+                            <span class="link-text">Testimonials</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#gallery" class="menu-link">
+                            <span class="link-icon"><i class="fas fa-images"></i></span>
+                            <span class="link-text">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#contact" class="menu-link">
+                            <span class="link-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="link-text">Contact Us</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section contact-info">
+                <h4 class="footer-heading"><i class="fas fa-address-card"></i> Contact Us</h4>
+                <ul class="contact-details">
+                    <li class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h5>Our Locations</h5>
+                            <p>
+                                <i class="fas fa-map-pin"></i> <strong>Githurai Branch:</strong> Githurai 44, Next to Equity Bank, Unaitas Building<br>
+                                <i class="fas fa-map-pin"></i> <strong>CBD Branch:</strong> Nairobi CBD, 3rd Floor, Rehema House
+                            </p>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h5>Phone & WhatsApp</h5>
+                            <p>
+                                <i class="fab fa-whatsapp"></i> <a href="https://wa.me/254723013017">+254 723 013 017</a><br>
+                                <i class="fas fa-phone"></i> <a href="tel:+254723013017">+254 723 013 017</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h5>Email & Social</h5>
+                            <p>
+                                <i class="fas fa-envelope"></i> <a href="mailto:info@ultimatedriving.co.ke">info@ultimatedriving.co.ke</a><br>
+                                <i class="fas fa-laptop"></i> <a href="#">www.ultimatedriving.co.ke</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h5>Courses Offered</h5>
+                            <p>
+                                <i class="fas fa-car"></i> Defensive Driving<br>
+                                <i class="fas fa-laptop"></i> Computer Packages<br>
+                                <i class="fas fa-code"></i> Programming Courses
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="footer-section business-hours">
+                <h4 class="footer-heading"><i class="far fa-clock"></i> Business Hours</h4>
+                <div class="hours-container">
+                    <div class="clock-wrapper">
+                        <div class="clock">
+                            <div class="clock-face">
+                                <div class="hand hour-hand"></div>
+                                <div class="hand min-hand"></div>
+                                <div class="hand second-hand"></div>
+                                <div class="center-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="hours-list">
+                        <li class="day">
+                            <span class="day-name"><i class="far fa-calendar-alt"></i> Monday - Friday</span>
+                            <span class="time">7:00 AM - 8:00 PM</span>
+                            <div class="time-indicator" data-time="mon-fri"></div>
+                        </li>
+                        <li class="day">
+                            <span class="day-name"><i class="far fa-calendar-alt"></i> Saturday</span>
+                            <span class="time">8:00 AM - 5:00 PM</span>
+                            <div class="time-indicator" data-time="sat"></div>
+                        </li>
+                        <li class="day">
+                            <span class="day-name"><i class="far fa-calendar-alt"></i> Sunday</span>
+                            <span class="time closed">Closed</span>
+                            <div class="time-indicator closed" data-time="sun"></div>
+                        </li>
+                    </ul>
+                    <div class="current-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Checking hours...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    &copy; <span id="current-year">2025</span> Ultimate Defensive Driving School & Computer College. All Rights Reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <span class="divider">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="divider">|</span>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 	<!-- // End Layout Frame // -->
 </div>
 <!-- // End Design Holder // -->
@@ -2836,59 +3748,39 @@
 }
 </style>
 
-<!-- Standalone Footer -->
-<footer class="footer-standalone">
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3>Ultimate Defensive Driving School</h3>
-            <p>Your trusted partner for professional driving and computer education in Kenya.</p>
-            <div class="footer-social">
-                <a href="#" class="social-link" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="social-link" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="social-link" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-            </div>
-        </div>
-        
-        <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#courses">Driving Courses</a></li>
-                <li><a href="#computer-courses">Computer Courses</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-section">
-            <h4>Contact Info</h4>
-            <ul class="contact-info" style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 15px; transition: all 0.3s ease; padding: 10px; border-radius: 5px;" onmouseover="this.style.transform='translateX(5px)'; this.style.backgroundColor='rgba(255,255,255,0.05)'; this.querySelector('i').style.color='#FF6B00'" onmouseout="this.style.transform='translateX(0)'; this.style.backgroundColor='transparent'; this.querySelector('i').style.color='#bdc3c7'">
-                    <i class="fa fa-map-marker" style="margin-right: 10px; color: #bdc3c7; transition: color 0.3s ease;"></i>
-                    <span style="color: #ffffff;"><strong>HEAD OFFICE:</strong> 0723013017</span>
-                </li>
-                <li style="margin-bottom: 15px; transition: all 0.3s ease; padding: 10px; border-radius: 5px;" onmouseover="this.style.transform='translateX(5px)'; this.style.backgroundColor='rgba(255,255,255,0.05)'; this.querySelector('i').style.color='#FF6B00'" onmouseout="this.style.transform='translateX(0)'; this.style.backgroundColor='transparent'; this.querySelector('i').style.color='#bdc3c7'">
-                    <i class="fa fa-map-marker" style="margin-right: 10px; color: #bdc3c7; transition: color 0.3s ease;"></i>
-                    <span style="color: #ffffff;">GITHURAI 44, NEXT TO EQUITY BANK, UNAITAS BUILDING</span>
-                </li>
-                <li style="margin-bottom: 15px; transition: all 0.3s ease; padding: 10px; border-radius: 5px;" onmouseover="this.style.transform='translateX(5px)'; this.style.backgroundColor='rgba(255,255,255,0.05)'; this.querySelector('i').style.color='#FF6B00'" onmouseout="this.style.transform='translateX(0)'; this.style.backgroundColor='transparent'; this.querySelector('i').style.color='#bdc3c7'">
-                    <i class="fa fa-envelope" style="margin-right: 10px; color: #bdc3c7; transition: color 0.3s ease;"></i>
-                    <a href="mailto:ultimatedefensivecollege565@gmail.com" style="color: #bdc3c7; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#FF6B00'" onmouseout="this.style.color='#bdc3c7'">ultimatedefensivecollege565@gmail.com</a>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="footer-section">
-            <h4>Opening Hours</h4>
-            <p><i class="fa fa-clock-o"></i> Monday - Friday: 7:00 AM - 8:00 PM</p>
-            <p><i class="fa fa-clock-o"></i> Saturday: 8:00 AM - 5:00 PM</p>
-            <p><i class="fa fa-clock-o"></i> Sunday: Closed</p>
-        </div>
+<!-- Modern Footer -->
+<footer class="modern-footer">
+    <!-- Wave Divider -->
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path fill="#0a4a0a" fill-opacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,122.7C960,139,1056,149,1152,138.7C1248,128,1344,96,1392,80L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+        </svg>
     </div>
     
-    <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2025</span> Ultimate Defensive Driving School. All rights reserved.</p>
-    </div>
-</footer>
+    <div class="footer-container">
+        <!-- Company Info -->
+        <div class="footer-section company-info">
+            <div class="brand">
+                <h3>Ultimate Defensive Driving School</h3>
+                <p class="tagline">Empowering safe and confident drivers in Kenya since 2010</p>
+            </div>
+            <p class="description">Your premier destination for professional driving and computer education, offering comprehensive training programs tailored to meet industry standards and individual needs.</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-icon" aria-label="Facebook" title="Connect on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Twitter" title="Follow us on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram" title="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="YouTube" title="Watch our videos">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
 
 <style>
 /* Standalone Footer Styles - Completely Independent */
@@ -3135,6 +4027,729 @@
         });
     </script>
     
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateBranchStatus();
+            // Update status every minute
+            setInterval(updateBranchStatus, 60000);
+        });
+
+        function updateBranchStatus() {
+            const cards = document.querySelectorAll('.branch-card');
+            const now = new Date();
+            const currentDay = now.getDay(); // 0 (Sunday) to 6 (Saturday)
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            
+            // Convert current time to minutes since midnight for easier comparison
+            const currentTimeInMinutes = (currentHour * 60) + currentMinute;
+            
+            // Opening hours: 8:00 AM (480 minutes) to 6:00 PM (1080 minutes)
+            const openTime = 8 * 60;   // 8:00 AM in minutes
+            const closeTime = 18 * 60;  // 6:00 PM in minutes
+            
+            cards.forEach(card => {
+                const statusBadge = card.querySelector('.branch-status');
+                const isOpen = currentTimeInMinutes >= openTime && currentTimeInMinutes < closeTime;
+                
+                if (isOpen) {
+                    // Calculate time until close
+                    const minutesUntilClose = closeTime - currentTimeInMinutes;
+                    const hoursUntilClose = Math.floor(minutesUntilClose / 60);
+                    const minsRemaining = minutesUntilClose % 60;
+                    
+                    // Update status badge
+                    statusBadge.innerHTML = `
+                        <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 5px; vertical-align: middle;"></i>
+                        <span class="status-text">Open Now</span>
+                        <span class="closing-soon" style="display: none; margin-left: 8px; font-weight: 500;">• Closes in ${hoursUntilClose}h ${minsRemaining}m</span>
+                    `;
+                    
+                    // Show closing soon message if within 1 hour
+                    if (minutesUntilClose <= 60) {
+                        statusBadge.querySelector('.closing-soon').style.display = 'inline';
+                    }
+                    
+                    // Update tooltip
+                    card.title = `Open until 6:00 PM`;
+                } else {
+                    let nextOpenDay = currentDay;
+                    let daysUntilNextOpen = 0;
+                    
+                    // If it's after hours today, show next opening time (tomorrow 8 AM)
+                    if (currentTimeInMinutes >= closeTime) {
+                        daysUntilNextOpen = 1;
+                        nextOpenDay = (currentDay + 1) % 7;
+                    }
+                    
+                    // If it's before opening hours, show today's opening time
+                    const nextOpenTime = new Date(now);
+                    nextOpenTime.setDate(now.getDate() + daysUntilNextOpen);
+                    nextOpenTime.setHours(8, 0, 0, 0);
+                    
+                    // Format the next open time
+                    const options = { 
+                        weekday: 'long', 
+                        hour: '2-digit', 
+                        minute: '2-digit',
+                        hour12: true 
+                    };
+                    const nextOpenTimeStr = nextOpenTime.toLocaleTimeString('en-US', options);
+                    
+                    // Update status badge
+                    statusBadge.innerHTML = `
+                        <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 5px; vertical-align: middle; color: #ef4444;"></i>
+                        <span class="status-text">Closed Now</span>
+                        <span class="next-opening" style="display: none; margin-left: 8px; font-weight: 500;">• Opens ${nextOpenTimeStr}</span>
+                    `;
+                    
+                    // Show next opening time on hover
+                    statusBadge.onmouseover = function() {
+                        this.querySelector('.next-opening').style.display = 'inline';
+                    };
+                    statusBadge.onmouseout = function() {
+                        this.querySelector('.next-opening').style.display = 'none';
+                    };
+                    
+                    // Update tooltip
+                    card.title = `Opens ${nextOpenTimeStr}`;
+                }
+                
+                // Add hover effect to show more details
+                card.addEventListener('mouseover', function() {
+                    const statusText = this.querySelector('.status-text');
+                    const closingSoon = this.querySelector('.closing-soon');
+                    const nextOpening = this.querySelector('.next-opening');
+                    
+                    if (isOpen) {
+                        if (closingSoon) closingSoon.style.display = 'inline';
+                    } else if (nextOpening) {
+                        nextOpening.style.display = 'inline';
+                    }
+                });
+                
+                card.addEventListener('mouseout', function() {
+                    const closingSoon = this.querySelector('.closing-soon');
+                    const nextOpening = this.querySelector('.next-opening');
+                    
+                    if (closingSoon) closingSoon.style.display = 'none';
+                    if (nextOpening) nextOpening.style.display = 'none';
+                });
+            });
+        }
+    </script>
+    
+    <!-- Footer Styles -->
+    <style>
+        /* Modern Footer Base Styles */
+        .modern-footer {
+            background: linear-gradient(135deg, #0a4a0a 0%, #1a7a1a 100%);
+            color: #ffffff;
+            padding: 80px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            transform: translateY(-99%);
+            z-index: 1;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Company Info Styles */
+        .footer-section.company-info {
+            padding-right: 20px;
+        }
+
+        .footer-logo h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .tagline {
+            color: #a0e8a0;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .company-description {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .social-icon:hover {
+            background: #0a4a0a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Quick Links Styles */
+        .quick-links .footer-heading {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .quick-links .footer-heading:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            border-radius: 3px;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            margin-bottom: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-icon {
+            margin-right: 12px;
+            color: #4CAF50;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .link-text {
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .menu-link:hover {
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        .menu-link:hover .link-icon {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .menu-link:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: #4CAF50;
+            transition: width 0.3s ease;
+        }
+
+        .menu-link:hover:before {
+            width: 100%;
+        }
+
+        /* Contact Information Styles */
+        .contact-info .footer-heading {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .contact-info .footer-heading:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #2196F3, #03A9F4);
+            border-radius: 3px;
+        }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            color: #2196F3;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            background: #2196F3;
+            color: white;
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .contact-text h5 {
+            color: #ffffff;
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-text p, 
+        .contact-text a {
+            color: #e0e0e0;
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .contact-text a:hover {
+            color: #4CAF50;
+            text-decoration: underline;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: #2196F3;
+            transition: height 0.3s ease;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .contact-item:hover:before {
+            height: 100%;
+        }
+
+        /* Business Hours Styles */
+        .business-hours .footer-heading {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .business-hours .footer-heading:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #FF9800, #FFC107);
+            border-radius: 3px;
+        }
+
+        .hours-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .clock-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .clock {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-3px);
+        }
+
+        .hand {
+            width: 50%;
+            height: 4px;
+            background: #FFC107;
+            position: absolute;
+            top: 50%;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+            transition: all 0.5s cubic-bezier(0.1, 2.7, 0.58, 1);
+            border-radius: 2px;
+        }
+
+        .hour-hand {
+            width: 30%;
+            left: 20%;
+            background: #FF9800;
+            height: 5px;
+        }
+
+        .min-hand {
+            width: 40%;
+            left: 10%;
+            background: #FFC107;
+            height: 4px;
+        }
+
+        .second-hand {
+            width: 45%;
+            left: 5%;
+            background: #FF5722;
+            height: 2px;
+            transition: transform 0.2s cubic-bezier(0.4, 2.3, 0.3, 1);
+        }
+
+        .center-dot {
+            width: 12px;
+            height: 12px;
+            background: #FF5722;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .day {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day:last-child {
+            border-bottom: none;
+        }
+
+        .day-name {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .time {
+            color: #a0e8a0;
+            font-size: 0.9rem;
+            margin-left: 15px;
+            text-align: right;
+            transition: all 0.3s ease;
+        }
+
+        .time.closed {
+            color: #ff9e9e;
+        }
+
+        .time-indicator {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .time-indicator.active {
+            opacity: 1;
+            animation: pulse 2s infinite;
+        }
+
+        .time-indicator.closed {
+            background: linear-gradient(90deg, rgba(255, 0, 0, 0.1), transparent);
+        }
+
+        .current-status {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #888;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.open {
+            background: #4CAF50;
+            box-shadow: 0 0 5px #4CAF50;
+        }
+
+        .status-dot.closed {
+            background: #F44336;
+            box-shadow: 0 0 5px #F44336;
+        }
+
+        .status-text {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-section {
+                padding-right: 0;
+            }
+        }
+    </style>
+
+    <!-- Footer Scripts -->
+    <script>
+        // Clock functionality
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            // Calculate clock angles
+            const hourDegrees = (hours % 12) * 30 + (minutes / 2);
+            const minDegrees = minutes * 6;
+            const secDegrees = seconds * 6;
+            
+            // Update clock hands
+            document.querySelector('.hour-hand').style.transform = `rotate(${hourDegrees}deg)`;
+            document.querySelector('.min-hand').style.transform = `rotate(${minDegrees}deg)`;
+            document.querySelector('.second-hand').style.transform = `rotate(${secDegrees}deg)`;
+            
+            // Update business hours status
+            updateBusinessHoursStatus(now, hours, minutes);
+        }
+        
+        // Update business hours status
+        function updateBusinessHoursStatus(now, currentHour, currentMinute) {
+            const day = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            const currentTime = currentHour * 100 + currentMinute; // Convert to 24h format (e.g., 1430 for 2:30 PM)
+            let isOpen = false;
+            let statusText = '';
+            let nextOpenTime = '';
+            
+            // Reset all indicators
+            document.querySelectorAll('.time-indicator').forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+            
+            const statusDot = document.querySelector('.status-dot');
+            const statusTextEl = document.querySelector('.status-text');
+            
+            // Check current day and time against business hours
+            if (day >= 1 && day <= 5) { // Monday to Friday
+                if (currentTime >= 700 && currentTime < 2000) {
+                    isOpen = true;
+                    document.querySelector('[data-time="mon-fri"]').classList.add('active');
+                    const closeTime = new Date();
+                    closeTime.setHours(20, 0, 0, 0);
+                    const timeUntilClose = Math.floor((closeTime - now) / 60000); // in minutes
+                    statusText = `Open now • Closes in ${Math.floor(timeUntilClose / 60)}h ${timeUntilClose % 60}m`;
+                } else {
+                    statusText = 'Closed now • Opens Monday at 7:00 AM';
+                    nextOpenTime = 'Mon 7:00 AM';
+                }
+            } else if (day === 6) { // Saturday
+                if (currentTime >= 800 && currentTime < 1700) {
+                    isOpen = true;
+                    document.querySelector('[data-time="sat"]').classList.add('active');
+                    const closeTime = new Date();
+                    closeTime.setHours(17, 0, 0, 0);
+                    const timeUntilClose = Math.floor((closeTime - now) / 60000);
+                    statusText = `Open now • Closes in ${Math.floor(timeUntilClose / 60)}h ${timeUntilClose % 60}m`;
+                } else {
+                    statusText = 'Closed now • Opens Monday at 7:00 AM';
+                    nextOpenTime = 'Mon 7:00 AM';
+                }
+            } else { // Sunday
+                document.querySelector('[data-time="sun"]').classList.add('active');
+                statusText = 'Closed today • Opens Monday at 7:00 AM';
+                nextOpenTime = 'Mon 7:00 AM';
+            }
+            
+            // Update status display
+            statusDot.className = 'status-dot ' + (isOpen ? 'open' : 'closed');
+            statusTextEl.textContent = statusText;
+            
+            // If we have a next open time, show it in the status
+            if (nextOpenTime) {
+                statusTextEl.textContent += ` • Next: ${nextOpenTime}`;
+            }
+        }
+        
+        // Initialize clock and update every second
+        updateClock();
+        setInterval(updateClock, 1000);
+        
+        // Add hover effect to business hours items
+        document.querySelectorAll('.day').forEach(day => {
+            day.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+                this.style.background = 'rgba(255, 255, 255, 0.05)';
+            });
+            
+            day.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+                this.style.background = 'transparent';
+            });
+        });
+        
+        // Add subtle animation to clock on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const clock = document.querySelector('.clock');
+            clock.style.transform = 'scale(0.5)';
+            clock.style.opacity = '0';
+            
+            setTimeout(() => {
+                clock.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                clock.style.transform = 'scale(1)';
+                clock.style.opacity = '1';
+            }, 100);
+            
+            // Animate status text
+            const statusText = document.querySelector('.status-text');
+            statusText.style.opacity = '0';
+            statusText.style.transform = 'translateY(10px)';
+            
+            setTimeout(() => {
+                statusText.style.transition = 'all 0.5s ease-out 0.3s';
+                statusText.style.opacity = '1';
+                statusText.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+    
     <!-- Navigation Script -->
     <script src="js/navigation.js"></script>
     
@@ -3146,6 +4761,8 @@
     
     <!-- Why Choose Us Section Scripts -->
     <script src="js/why-choose-us.js"></script>
-
+    
+    <!-- Branch Cards Script -->
+    <script src="js/branches.js"></script>
 </body>
 </html>
