@@ -110,58 +110,85 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,400italic,800,700' rel='stylesheet' type='text/css'>    
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
     <link href="css/branches.css" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+<!-- Skip to main content link (for keyboard users) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Main Navigation -->
+<header class="main-header">
+    <div class="container">
+        <!-- Logo -->
+        <a href="#home" class="logo" aria-label="Ultimate Defensive Driving School - Home">
+            <img src="img/UDDS%20LOGO.jpg" alt="" class="logo-img">
+            <span class="logo-text">Ultimate DDS</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">
+                        <span class="link-text">Home</span>
+                        <span class="link-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">
+                        <span class="link-text">About</span>
+                        <span class="link-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#courses" class="nav-link">
+                        <span class="link-text">Courses</span>
+                        <span class="link-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">
+                        <span class="link-text">Testimonials</span>
+                        <span class="link-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <span class="link-text">Contact</span>
+                        <span class="link-underline"></span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Enroll Now CTA Button -->
+            <a href="#contact" class="nav-cta">
+                <span class="cta-text">Enroll Now</span>
+                <span class="cta-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </span>
+            </a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+            <span class="menu-icon"></span>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay"></div>
 
 <!-- \\ Begin Holder \\ -->
 <div class="DesignHolder">
 	<!-- \\ Begin Frame \\ -->
-	<div class="LayoutFrame">
-        <!-- Main Header -->
-        <header class="site-header">
-            <div class="container">
-                <!-- Logo -->
-                <a href="#home" class="site-logo">
-                    <img src="img/UDDS%20LOGO.jpg" alt="Ultimate Defensive Driving School" class="logo-image">
-                    <span class="logo-text">UDDS</span>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <nav class="primary-navigation">
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="#home" class="nav-link active" data-nav-link>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link" data-nav-link>About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#courses" class="nav-link" data-nav-link>Courses</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#testimonials" class="nav-link" data-nav-link>Testimonials</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link" data-nav-link>Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
-                    <span class="menu-icon">
-                        <span class="menu-line"></span>
-                        <span class="menu-line"></span>
-                        <span class="menu-line"></span>
-                    </span>
-                    <span class="sr-only">Menu</span>
-                </button>
-            </div>
-
-            <!-- Mobile Navigation Overlay -->
-            <div class="mobile-nav-overlay"></div>
-        </header>
+	<div class="LayoutFrame" id="main-content">
         <!-- \\ Begin Hero Section \\ -->
         <section class="hero-section" id="home">
             <!-- Animated Background Shapes -->
@@ -1639,7 +1666,7 @@
             </section>
             
         <!-- \\ Begin Testimonials Section \\ -->
-        <section class="testimonials-section">
+        <section id="testimonials" class="testimonials-section">
             <div class="testimonial-overlay"></div>
             <div class="Center">
                 <div class="section-header">
@@ -3743,7 +3770,7 @@
             <!-- Company Info -->
             <div class="footer-section company-info">
                 <div class="footer-logo">
-                    <h3><i class="fas fa-car-side"></i> Ultimate Defensive <span>Driving School</span></h3>
+                    <img src="img/UDDS%20LOGO.jpg" alt="Ultimate Defensive Driving School" style="width: 180px; height: auto; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                     <p class="tagline">
                         <i class="fas fa-graduation-cap"></i> Empowering Safe Drivers in Kenya
                     </p>
@@ -3890,10 +3917,14 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/254 723 013017" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/254723013017" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
         <i class="fa fa-whatsapp"></i>
         <span class="pulse"></span>
+        <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
     </a>
+    
+    <!-- WhatsApp Button Styles -->
+    <link rel="stylesheet" href="css/whatsapp-button.css">
 
     <!-- <<Attched Javascripts>> -->
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
@@ -3934,87 +3965,6 @@
         }
     </style>
 
-    <style>
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transform: translateY(0);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .whatsapp-float i {
-            position: relative;
-            z-index: 2;
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            animation: none;
-        }
-
-        .whatsapp-float:hover i {
-            transform: scale(1.2);
-        }
-
-        /* Pulse Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .pulse {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            border-radius: 50%;
-            border: 2px solid rgba(37, 211, 102, 0.7);
-            animation: pulse 2s infinite;
-            opacity: 0;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(0.8);
-                opacity: 0.7;
-            }
-            70% {
-                transform: scale(1.3);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 26px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
     </style>
 
     <script>
@@ -4647,9 +4597,11 @@
     
     <!-- Navigation Script -->
     <script src="js/navigation.js"></script>
+    <link rel="stylesheet" href="css/navigation.css">
     
     <!-- About Section Scripts -->
-    <script src="js/about.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/nav.js"></script>
     
     <!-- Courses Section Scripts -->
     <script src="js/courses.js"></script>
