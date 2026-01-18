@@ -2618,14 +2618,14 @@
                 <div id="registration-form" class="registration-form-container" style="background: white; border-radius: 16px; box-shadow: 0 20px 50px rgba(10, 74, 10, 0.15); padding: 50px; position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); width: 100%; margin: 0 auto; max-width: 1000px;">
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #0a4a0a, #1a7a1a);"></div>
                     
-                    <form id="studentRegistrationForm" action="https://formsubmit.co/ultimatedefensivecollege565@gmail.com" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                    <form id="studentRegistrationForm" action="https://formsubmit.co/ultimatedefensivecollege565@gmail.com" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;" novalidate>
                         <!-- FormSubmit Configuration -->
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_subject" value="New Student Registration - Ultimate Defensive Driving School">
-                        <input type="hidden" name="_next" value="https://yourdomain.com/registration-thank-you.html">
+                        <input type="hidden" name="_next" value="https://www.ultimatedefensivedriving.co.ke/registration-thank-you.html">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="text" name="_honey" style="display:none">
-                        <input type="hidden" name="_autoresponse" value="Thank you for registering with Ultimate Defensive Driving School! We've received your registration details and will contact you shortly to confirm your enrollment. For any urgent inquiries, please call us at [Your Phone Number]. We look forward to helping you on your driving journey!">
+                        <input type="hidden" name="_autoresponse" value="Thank you for registering with Ultimate Defensive Driving School! We've received your registration details and will contact you shortly to confirm your enrollment. For any urgent inquiries, please call us at 0723 013017. We look forward to helping you on your driving journey!">
                         <!-- Personal Information Section -->
                         <div class="form-group" style="grid-column: 1 / -1; margin: 0 0 10px 0; padding: 0 0 15px 0; border-bottom: 1px solid #f1f5f9;">
                             <h3 style="color: #0f172a; font-size: 1.5rem; font-weight: 600; display: flex; align-items: center; gap: 10px;">
@@ -2748,15 +2748,27 @@
                         
                         <!-- Submit Button -->
                         <div class="form-group" style="grid-column: 1 / -1; margin: 20px 0 10px;">
-                            <button type="submit" 
+                            <button type="submit" id="submitBtn"
                                     style="background: linear-gradient(90deg, #0a4a0a, #1a7a1a); color: white; border: none; padding: 16px 30px; border-radius: 8px; font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; position: relative; overflow: hidden;"
                                     onmouseover="this.style.opacity='0.95'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 15px rgba(10, 74, 10, 0.25)';"
                                     onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(10, 74, 10, 0.15)';">
-                                <i class="fa fa-paper-plane" style="font-size: 1.1em; position: relative; z-index: 1;"></i>
-                                <span style="position: relative; z-index: 1;">Submit Application</span>
-                                <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #1a7a1a, #0a4a0a); opacity: 0; transition: opacity 0.3s ease; z-index: 0;"></span>
+                                <i class="fa fa-paper-plane" style="font-size: 1.1em; position: relative; z-index: 1;" id="submitIcon"></i>
+                                <span style="position: relative; z-index: 1;" id="submitText">Submit Application</span>
+                                <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #1a7a1a, #0a4a0a); opacity: 0; transition: opacity 0.3s ease; z-index: 0;" id="submitHover"></span>
+                                <div class="spinner" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; width: 20px; height: 20px; border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite;" id="submitSpinner"></div>
                             </button>
+                            <div id="formMessage" style="margin-top: 15px; padding: 12px; border-radius: 6px; display: none; font-weight: 500; text-align: center;"></div>
                         </div>
+                        
+                        <style>
+                            @keyframes spin {
+                                to { transform: translate(-50%, -50%) rotate(360deg); }
+                            }
+                            .form-error { border-color: #ef4444 !important; }
+                            .error-message { color: #ef4444; font-size: 0.85rem; margin-top: 5px; display: block; }
+                            .form-success { background-color: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+                            .form-error-message { background-color: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+                        </style>
                         
                         <!-- Terms & Conditions -->
                         <div style="grid-column: 1 / -1; text-align: center; margin-top: 5px; font-size: 0.85rem; color: #94a3b8; line-height: 1.5;">
@@ -2771,6 +2783,172 @@
                 </div>
             </div>
         </section>
+        <!-- Form Submission Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('studentRegistrationForm');
+                const submitBtn = document.getElementById('submitBtn');
+                const submitIcon = document.getElementById('submitIcon');
+                const submitText = document.getElementById('submitText');
+                const submitSpinner = document.getElementById('submitSpinner');
+                const formMessage = document.getElementById('formMessage');
+                const requiredFields = form.querySelectorAll('[required]');
+
+                // Validate form fields on blur
+                requiredFields.forEach(field => {
+                    field.addEventListener('blur', () => validateField(field));
+                    
+                    // For select elements, validate on change
+                    if (field.tagName === 'SELECT') {
+                        field.addEventListener('change', () => validateField(field));
+                    }
+                });
+
+                // Form submission handler
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Validate all required fields
+                    let isValid = true;
+                    requiredFields.forEach(field => {
+                        if (!validateField(field)) {
+                            isValid = false;
+                        }
+                    });
+
+                    if (!isValid) {
+                        showMessage('Please fill in all required fields correctly.', 'error');
+                        return;
+                    }
+
+                    // Show loading state
+                    setFormState('loading');
+
+                    try {
+                        // Submit form data
+                        const formData = new FormData(form);
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            // Show success message
+                            showMessage('Registration successful! We will contact you shortly.', 'success');
+                            form.reset();
+                            
+                            // Redirect to thank you page after a short delay
+                            setTimeout(() => {
+                                window.location.href = form.querySelector('[name="_next"]').value;
+                            }, 2000);
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        showMessage('There was an error submitting the form. Please try again or contact us directly.', 'error');
+                    } finally {
+                        setFormState('idle');
+                    }
+                });
+
+                // Validate individual field
+                function validateField(field) {
+                    const errorElement = field.parentElement.nextElementSibling;
+                    
+                    // Remove existing error message
+                    if (errorElement && errorElement.classList.contains('error-message')) {
+                        errorElement.remove();
+                    }
+                    
+                    // Reset field styling
+                    field.classList.remove('form-error');
+                    
+                    // Check if field is valid
+                    if (!field.checkValidity()) {
+                        field.classList.add('form-error');
+                        
+                        // Create and display error message
+                        const errorMessage = document.createElement('span');
+                        errorMessage.className = 'error-message';
+                        errorMessage.textContent = field.validationMessage || 'This field is required';
+                        
+                        // Insert error message after the input's parent div
+                        field.parentElement.insertAdjacentElement('afterend', errorMessage);
+                        
+                        return false;
+                    }
+                    
+                    return true;
+                }
+
+                // Show form message
+                function showMessage(message, type) {
+                    formMessage.textContent = message;
+                    formMessage.className = type === 'success' ? 'form-success' : 'form-error-message';
+                    formMessage.style.display = 'block';
+                    
+                    // Scroll to message
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                // Set form state (loading, success, error, idle)
+                function setFormState(state) {
+                    switch(state) {
+                        case 'loading':
+                            submitBtn.disabled = true;
+                            submitIcon.style.opacity = '0';
+                            submitText.style.opacity = '0';
+                            submitSpinner.style.display = 'block';
+                            break;
+                            
+                        case 'success':
+                            submitBtn.style.backgroundColor = '#10b981';
+                            submitBtn.style.backgroundImage = 'none';
+                            submitIcon.className = 'fa fa-check';
+                            submitText.textContent = 'Success!';
+                            break;
+                            
+                        case 'error':
+                            submitBtn.style.backgroundColor = '#ef4444';
+                            submitBtn.style.backgroundImage = 'none';
+                            submitIcon.className = 'fa fa-exclamation-circle';
+                            submitText.textContent = 'Error';
+                            break;
+                            
+                        case 'idle':
+                        default:
+                            submitBtn.disabled = false;
+                            submitIcon.style.opacity = '1';
+                            submitText.style.opacity = '1';
+                            submitSpinner.style.display = 'none';
+                            submitIcon.className = 'fa fa-paper-plane';
+                            submitText.textContent = 'Submit Application';
+                            submitBtn.style.background = 'linear-gradient(90deg, #0a4a0a, #1a7a1a)';
+                            break;
+                    }
+                }
+
+                // Phone number formatting
+                const phoneInput = document.getElementById('phone');
+                if (phoneInput) {
+                    phoneInput.addEventListener('input', function(e) {
+                        // Remove all non-digit characters
+                        let phone = e.target.value.replace(/\D/g, '');
+                        
+                        // Format phone number (e.g., 0712 345 678)
+                        if (phone.length > 0) {
+                            phone = phone.match(/(\d{0,4})(\d{0,3})(\d{0,3})/).slice(1).join(' ').trim();
+                        }
+                        
+                        e.target.value = phone;
+                    });
+                }
+            });
+        </script>
         <!-- // End Registration Form Section // -->
         
         <!-- \\ Begin Pricing Section \\ -->
