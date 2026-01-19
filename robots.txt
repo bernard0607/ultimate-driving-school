@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://ultimatedefensivedriving.co.ke/sitemap.xml
