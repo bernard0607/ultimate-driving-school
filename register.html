@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration - Ultimate Defensive Driving School</title>
+    <meta name="description" content="Register online for driving and computer courses at Ultimate Defensive Driving School. NTSA-approved training with flexible schedules.">
+    <meta name="keywords" content="driving school registration, computer courses registration, NTSA driving license, Nairobi driving school">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="css/footer.css" type="text/css" />
+    <link rel="stylesheet" href="css/media.css" type="text/css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Navigation Styles */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .main-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        
+        .logo img {
+            max-height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .main-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: #22c55e;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #22c55e;
+        }
+        
+        .nav-cta {
+            margin-left: 30px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .main-nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+        
+        /* Enhanced Registration Page Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+            min-height: 100vh;
+        }
+        
+        /* Registration Page Styles */
+        .registration-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        
+        .registration-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMyIgZmlsbD0icmdiYSg3NCwgMjIyLCAxMjgsIDAuMDUpIj48L2NpcmNsZT48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiPjwvcmVjdD48L3N2Zz4=');
+            opacity: 0.03;
+            z-index: 1;
+        }
+        
+        .registration-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 60px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .registration-header {
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        .registration-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0a4a0a;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #0a4a0a, #22c55e, #4ade80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(10, 74, 10, 0.1);
+        }
+        
+        .registration-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .registration-form-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .registration-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .registration-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4ade80, #22c55e, #0a4a0a);
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .form-section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .form-section h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+        
+        .form-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #4ade80, #22c55e);
+            border-radius: 2px;
+        }
+        
+        .form-section h3 i {
+            color: #22c55e;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .form-group label .required {
+            color: #ef4444;
+            margin-left: 2px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #f9fafb;
+            position: relative;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #22c55e;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .form-control.error {
+            border-color: #ef4444;
+            background: #fef2f2;
+            animation: shake 0.5s ease;
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            display: none;
+            font-weight: 500;
+            animation: slideInDown 0.3s ease;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        select.form-control {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23374151' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 40px;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .course-selection {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .course-option {
+            position: relative;
+        }
+        
+        .course-option input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .course-option label {
+            display: block;
+            padding: 18px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #f9fafb;
+            text-align: center;
+            font-weight: 600;
+            color: #374151;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-option label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .course-option input[type="checkbox"]:checked + label {
+            border-color: #22c55e;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            color: #0a4a0a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
+        }
+        
+        .course-option input[type="checkbox"]:checked + label::before {
+            left: 100%;
+        }
+        
+        .course-option label:hover {
+            border-color: #22c55e;
+            background: #f0fdf4;
+            transform: translateY(-2px);
+        }
+        
+        .payment-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .payment-option {
+            position: relative;
+        }
+        
+        .payment-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .payment-option label {
+            display: block;
+            padding: 18px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #f9fafb;
+            text-align: center;
+            font-weight: 600;
+            color: #374151;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .payment-option label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .payment-option input[type="radio"]:checked + label {
+            border-color: #22c55e;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            color: #0a4a0a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
+        }
+        
+        .payment-option input[type="radio"]:checked + label::before {
+            left: 100%;
+        }
+        
+        .payment-option label:hover {
+            border-color: #22c55e;
+            background: #f0fdf4;
+            transform: translateY(-2px);
+        }
+        
+        .form-sidebar {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 0.4s;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #22c55e;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #4ade80, #22c55e, #0a4a0a);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .info-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .info-card h4 i {
+            color: #22c55e;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+        }
+        
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .info-card ul li {
+            padding: 10px 0;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .info-card ul li:hover {
+            color: #374151;
+            transform: translateX(5px);
+        }
+        
+        .info-card ul li i {
+            color: #22c55e;
+            font-size: 0.9rem;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 6px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #0a4a0a, #22c55e);
+            color: white;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(10, 74, 10, 0.3);
+        }
+        
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .contact-info h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info .contact-item:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .contact-info .contact-item i {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+        }
+        
+        .btn-submit {
+            flex: 1;
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+        }
+        
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(34, 197, 94, 0.4);
+        }
+        
+        .btn-submit:hover::before {
+            left: 100%;
+        }
+        
+        .btn-submit:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn-reset {
+            flex: 1;
+            background: transparent;
+            color: #64748b;
+            padding: 18px 35px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-reset:hover {
+            background: #f9fafb;
+            border-color: #22c55e;
+            color: #22c55e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.15);
+        }
+        
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .success-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        .success-message.show {
+            display: block;
+            animation: slideInDown 0.5s ease;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(180deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .registration-form-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-selection {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .registration-container {
+                padding: 100px 15px 40px;
+            }
+            
+            .registration-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .registration-form {
+                padding: 30px 25px;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .btn-submit, .btn-reset {
+                width: 100%;
+            }
+        }
+        
+        /* Footer Styles */
+        .new-footer {
+            background: linear-gradient(135deg, #0a4a0a, #1a5d1a);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-wave {
+            position: relative;
+            height: 60px;
+            overflow: hidden;
+        }
+        
+        .footer-wave svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .footer-section {
+            position: relative;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4ade80;
+            margin: 0;
+        }
+        
+        .company-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-link:hover {
+            background: #4ade80;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 222, 128, 0.3);
+        }
+        
+        .footer-heading {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #4ade80;
+            position: relative;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #4ade80;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-menu a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-menu a:hover {
+            color: #4ade80;
+            transform: translateX(5px);
+        }
+        
+        .footer-menu a i {
+            font-size: 0.8rem;
+            color: #4ade80;
+        }
+        
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .contact-details li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(74, 222, 128, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4ade80;
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .contact-text strong {
+            color: #4ade80;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .contact-text a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: #4ade80;
+        }
+        
+        .hours-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .current-time {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #4ade80;
+            font-weight: 600;
+        }
+        
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .day {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .time {
+            color: #4ade80;
+            font-weight: 600;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-dot.open {
+            background: #4ade80;
+        }
+        
+        .status-dot.closed {
+            background: #ef4444;
+        }
+        
+        .status-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+        
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        @media (max-width: 968px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .contact-details li {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .hours-list li {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .status-indicator {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Ultimate Defensive Driving School - Home">
+                <img src="img/UDDS%20LOGO.jpg" alt="" class="logo-img">
+                <span class="logo-text">Ultimate DDS</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span class="link-text">Home</span>
+                            <span class="link-underline"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">
+                            <span class="link-text">About</span>
+                            <span class="link-underline"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="why-choose-us.html" class="nav-link">
+                            <span class="link-text">Why Choose Us</span>
+                            <span class="link-underline"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="courses.html" class="nav-link active">
+                            <span class="link-text">Courses</span>
+                            <span class="link-underline"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">
+                            <span class="link-text">Blog</span>
+                            <span class="link-underline"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <span class="link-text">Contact</span>
+                            <span class="link-underline"></span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Enroll Now CTA Button -->
+                <a href="register.html" class="nav-cta">
+                    <span class="cta-text">Enroll Now</span>
+                    <span class="cta-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+                <span class="menu-icon"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <!-- Registration Page Content -->
+    <main class="registration-page">
+        <div class="registration-container">
+            <div class="registration-header">
+                <h1>Online Registration</h1>
+                <p>Join Kenya's leading driving and computer training school. Fill out the form below to start your journey to success.</p>
+            </div>
+            
+            <div class="registration-form-wrapper">
+                <div class="registration-form">
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        Registration submitted successfully! We'll contact you within 24 hours.
+                    </div>
+                    
+                    <form id="registrationForm" action="https://formsubmit.co/ultimatedefensivecollege565@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="New Registration Form Submission - Ultimate Driving School">
+                        <input type="hidden" name="_next" value="https://www.ultimatedefensivedriving.co.ke/registration-thank-you.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none;">
+                        <input type="hidden" name="_autoresponse" value="Thank you for registering with Ultimate Defensive Driving School! We have received your registration and will contact you within 24 hours to confirm your schedule and payment details. For urgent inquiries, please call us at +254 723 013 017.">
+                        
+                        <!-- Personal Information Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" class="form-control" required>
+                                    <span class="error-message">Please enter your first name</span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" class="form-control" required>
+                                    <span class="error-message">Please enter your last name</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                    <span class="error-message">Please enter a valid email address</span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="+254 XXX XXX XXX" required>
+                                    <span class="error-message">Please enter your phone number</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="idNumber">ID Number <span class="required">*</span></label>
+                                    <input type="text" id="idNumber" name="idNumber" class="form-control" required>
+                                    <span class="error-message">Please enter your ID number</span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="dateOfBirth">Date of Birth <span class="required">*</span></label>
+                                    <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control" required>
+                                    <span class="error-message">Please enter your date of birth</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="preferredBranch">Preferred Branch <span class="required">*</span></label>
+                                <select id="preferredBranch" name="preferredBranch" class="form-control" required>
+                                    <option value="">Select your preferred branch</option>
+                                    <option value="githurai-44a">Githurai 44A - Next to Equity Bank</option>
+                                    <option value="githurai-44b">Githurai 44B - Unaitas Building</option>
+                                    <option value="githurai-45">Githurai 45 - Near KCB Bank</option>
+                                    <option value="zimmerman">Zimmerman - Main Branch</option>
+                                    <option value="mwiki">MWIKI - Shopping Center</option>
+                                    <option value="sunton">SUNTON - Shopping Center</option>
+                                    <option value="githunguri">Githunguri - Market Area</option>
+                                </select>
+                                <span class="error-message">Please select your preferred branch</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Course Selection Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-graduation-cap"></i> Course Selection</h3>
+                            
+                            <div class="form-group">
+                                <label for="primaryCourse">Primary Course <span class="required">*</span></label>
+                                <select id="primaryCourse" name="primaryCourse" class="form-control" required>
+                                    <option value="">Select your primary course</option>
+                                    <optgroup label="Driving Courses">
+                                        <option value="category-a2">Category A2 - Motorcycle (75cc-400cc)</option>
+                                        <option value="category-a3">Category A3 - Motorcycle (≥400cc)</option>
+                                        <option value="category-b1">Category B1 - Light Vehicle (Manual)</option>
+                                        <option value="category-b2">Category B2 - Light Vehicle (Automatic)</option>
+                                        <option value="category-c1">Category C1 - Medium Commercial</option>
+                                        <option value="category-c2">Category C2 - Heavy Commercial</option>
+                                        <option value="category-e">Category E - Trailer/Truck</option>
+                                        <option value="defensive-driving">Defensive Driving Course</option>
+                                        <option value="refresher-course">Refresher Driving Course</option>
+                                        <option value="intensive-course">Intensive Driving Course</option>
+                                    </optgroup>
+                                    <optgroup label="Computer Courses">
+                                        <option value="computer-basic">Computer Basics Certificate</option>
+                                        <option value="computer-accounting">Computer Accounting</option>
+                                        <option value="computer-secretarial">Computer Secretarial</option>
+                                        <option value="graphic-design">Graphic Design</option>
+                                        <option value="computer-programming">Computer Programming</option>
+                                        <option value="web-development">Web Development</option>
+                                        <option value="spss-basic">SPSS (Basic)</option>
+                                        <option value="spss-advanced">SPSS (Advanced)</option>
+                                        <option value="data-analysis">Data Analysis & Visualization</option>
+                                        <option value="digital-marketing">Digital Marketing</option>
+                                    </optgroup>
+                                    <optgroup label="Short Courses">
+                                        <option value="first-aid">First Aid & Safety</option>
+                                        <option value="basic-mechanics">Basic Vehicle Mechanics</option>
+                                        <option value="road-safety">Road Safety Training</option>
+                                        <option value="fleet-management">Fleet Management</option>
+                                        <option value="driver-assessment">Driver Assessment & Evaluation</option>
+                                    </optgroup>
+                                </select>
+                                <span class="error-message">Please select your primary course</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="secondaryCourse">Secondary Course (Optional)</label>
+                                <select id="secondaryCourse" name="secondaryCourse" class="form-control">
+                                    <option value="">Select a secondary course (optional)</option>
+                                    <optgroup label="Additional Driving Courses">
+                                        <option value="defensive-driving">Defensive Driving Course</option>
+                                        <option value="refresher-course">Refresher Driving Course</option>
+                                        <option value="intensive-course">Intensive Driving Course</option>
+                                        <option value="night-driving">Night Driving Training</option>
+                                        <option value="highway-driving">Highway Driving Skills</option>
+                                    </optgroup>
+                                    <optgroup label="Additional Computer Courses">
+                                        <option value="computer-basic">Computer Basics Certificate</option>
+                                        <option value="computer-accounting">Computer Accounting</option>
+                                        <option value="computer-secretarial">Computer Secretarial</option>
+                                        <option value="ms-office">Microsoft Office Suite</option>
+                                        <option value="internet-basics">Internet & Email Basics</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="preferredSchedule">Preferred Schedule <span class="required">*</span></label>
+                                <select id="preferredSchedule" name="preferredSchedule" class="form-control" required>
+                                    <option value="">Select preferred schedule</option>
+                                    <optgroup label="Weekday Options">
+                                        <option value="morning">Morning (6:00 AM - 12:00 PM)</option>
+                                        <option value="afternoon">Afternoon (12:00 PM - 6:00 PM)</option>
+                                        <option value="evening">Evening (6:00 PM - 8:00 PM)</option>
+                                    </optgroup>
+                                    <optgroup label="Weekend Options">
+                                        <option value="saturday-morning">Saturday Morning (8:00 AM - 1:00 PM)</option>
+                                        <option value="saturday-afternoon">Saturday Afternoon (2:00 PM - 6:00 PM)</option>
+                                        <option value="sunday-morning">Sunday Morning (8:00 AM - 1:00 PM)</option>
+                                        <option value="sunday-afternoon">Sunday Afternoon (2:00 PM - 6:00 PM)</option>
+                                    </optgroup>
+                                    <optgroup label="Flexible Options">
+                                        <option value="flexible">Flexible Schedule (Custom timing)</option>
+                                        <option value="intensive">Intensive Program (Daily)</option>
+                                        <option value="part-time">Part-time (2-3 days per week)</option>
+                                    </optgroup>
+                                </select>
+                                <span class="error-message">Please select your preferred schedule</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Information Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-credit-card"></i> Payment Information</h3>
+                            
+                            <div class="payment-options">
+                                <div class="payment-option">
+                                    <input type="radio" id="fullPayment" name="paymentMethod" value="fullPayment">
+                                    <label for="fullPayment">Full Payment</label>
+                                </div>
+                                
+                                <div class="payment-option">
+                                    <input type="radio" id="installments" name="paymentMethod" value="installments">
+                                    <label for="installments">Installments</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="additionalInfo">Additional Information</label>
+                                <textarea id="additionalInfo" name="additionalInfo" class="form-control" placeholder="Tell us about your previous experience or any special requirements..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Registration
+                            </button>
+                            <button type="reset" class="btn-reset">
+                                <i class="fas fa-redo"></i>
+                                Reset Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="form-sidebar">
+                    <div class="info-card">
+                        <h4><i class="fas fa-info-circle"></i> Why Register Online?</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Quick and easy registration</li>
+                            <li><i class="fas fa-check"></i> Secure data protection</li>
+                            <li><i class="fas fa-check"></i> Instant confirmation</li>
+                            <li><i class="fas fa-check"></i> Priority scheduling</li>
+                            <li><i class="fas fa-check"></i> Dedicated support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4><i class="fas fa-clock"></i> Registration Process</h4>
+                        <ul>
+                            <li><i class="fas fa-edit"></i> Fill registration form</li>
+                            <li><i class="fas fa-phone"></i> We contact you within 24hrs</li>
+                            <li><i class="fas fa-calendar"></i> Schedule your classes</li>
+                            <li><i class="fas fa-credit-card"></i> Complete payment</li>
+                            <li><i class="fas fa-graduation-cap"></i> Start training</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+254 723 013 017</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ultimatedrivingschool2019@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Githurai 44, Nairobi</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 6AM-6PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="new-footer">
+        <!-- Wave Divider -->
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path fill="#0a4a0a" fill-opacity="1" d="M0,50L80,58.3C160,67,320,83,480,83.3C640,83,800,67,960,66.7C1120,67,1280,83,1360,91.7L1440,100L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+            </svg>
+        </div>
+
+        <div class="footer-container">
+            <!-- Company Info -->
+            <div class="footer-section company-info">
+                <div class="footer-logo">
+                    <img src="img/UDDS%20LOGO.jpg" alt="Ultimate Defensive Driving School">
+                    <p class="tagline">
+                        <i class="fas fa-graduation-cap"></i> Empowering Safe Drivers in Kenya
+                    </p>
+                </div>
+                <p class="company-description">
+                    Professional driving school offering comprehensive training for all levels of drivers. Our certified instructors provide personalized lessons to help you become a confident and safe driver.
+                </p>
+                <div class="social-links">
+                    <a href="https://youtube.com/@ultimatedrivingschool2928?si=Y9_tye6gg6eherGd" class="social-icon youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1Ag5g5WNMe/" class="social-icon facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/254723013017" class="social-icon whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section quick-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-menu">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Our Courses</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="footer-section business-hours">
+                <h4 class="footer-heading">Business Hours</h4>
+                <div class="hours-container">
+                    <div class="current-time">
+                        <i class="far fa-clock"></i>
+                        <span id="current-time">--:--:--</span>
+                        <span id="am-pm"></span>
+                    </div>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">6:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday - Sunday</span>
+                            <span class="time">8:00 AM - 5:30 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Ultimate Defensive Driving School & Computer College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/nav.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    
+                    // Animate hamburger menu
+                    const spans = this.querySelectorAll('span');
+                    spans.forEach((span, index) => {
+                        if (mainNav.classList.contains('active')) {
+                            if (index === 0) span.style.transform = 'rotate(45deg) translateY(8px)';
+                            if (index === 1) span.style.opacity = '0';
+                            if (index === 2) span.style.transform = 'rotate(-45deg) translateY(-8px)';
+                        } else {
+                            span.style.transform = '';
+                            span.style.opacity = '';
+                        }
+                    });
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mainNav && mainNav.classList.contains('active') && 
+                    !mainNav.contains(e.target) && 
+                    !mobileMenuToggle.contains(e.target)) {
+                    mainNav.classList.remove('active');
+                    
+                    // Reset hamburger menu
+                    const spans = mobileMenuToggle.querySelectorAll('span');
+                    spans.forEach(span => {
+                        span.style.transform = '';
+                        span.style.opacity = '';
+                    });
+                }
+            });
+        });
+        
+        // Form Validation and Submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            // Basic client-side validation before FormSubmit
+            let isValid = true;
+            const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'idNumber', 'dateOfBirth', 'preferredBranch', 'primaryCourse', 'preferredSchedule'];
+            
+            // Reset previous errors
+            const errorMessages = document.querySelectorAll('.error-message');
+            const formControls = document.querySelectorAll('.form-control');
+            
+            errorMessages.forEach(msg => msg.classList.remove('show'));
+            formControls.forEach(control => control.classList.remove('error'));
+            
+            // Validate required fields
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                const value = field.value.trim();
+                
+                if (!value) {
+                    field.classList.add('error');
+                    field.nextElementSibling.classList.add('show');
+                    isValid = false;
+                } else if (fieldId === 'email' && !isValidEmail(value)) {
+                    field.classList.add('error');
+                    field.nextElementSibling.classList.add('show');
+                    isValid = false;
+                } else if (fieldId === 'phone' && !isValidPhone(value)) {
+                    field.classList.add('error');
+                    field.nextElementSibling.classList.add('show');
+                    isValid = false;
+                }
+            });
+            
+            // Validate payment method selection
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+            if (!paymentMethod) {
+                alert('Please select a payment method');
+                isValid = false;
+            }
+            
+            // If validation fails, prevent form submission
+            if (!isValid) {
+                e.preventDefault();
+                // Scroll to first error
+                const firstError = document.querySelector('.form-control.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return false;
+            }
+            
+            // If validation passes, allow FormSubmit to handle the submission
+            // Show loading state
+            const submitBtn = document.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.disabled = true;
+            
+            // FormSubmit will handle the actual submission
+            return true;
+        });
+        
+        // Email validation
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Phone validation
+        function isValidPhone(phone) {
+            const phoneRegex = /^(\+254|0)?[7]\d{8}$/;
+            return phoneRegex.test(phone.replace(/\s/g, ''));
+        }
+        
+        // Remove error on input
+        document.querySelectorAll('.form-control').forEach(field => {
+            field.addEventListener('input', function() {
+                this.classList.remove('error');
+                if (this.nextElementSibling && this.nextElementSibling.classList.contains('error-message')) {
+                    this.nextElementSibling.classList.remove('show');
+                }
+            });
+        });
+        
+        // Payment method validation
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Clear any payment method errors
+                const paymentOptions = document.querySelectorAll('.payment-option');
+                paymentOptions.forEach(option => {
+                    option.classList.remove('error');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

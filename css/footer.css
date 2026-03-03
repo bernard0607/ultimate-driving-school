@@ -42,6 +42,15 @@
     animation: fadeInUp 0.6s ease-out;
 }
 
+/* Footer Logo */
+.footer-logo img {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 /* Company Info */
 .company-info .footer-logo h3 {
     color: #ffffff;
@@ -90,6 +99,7 @@
     font-size: 16px;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
 }
 
 .social-icon i {
@@ -118,7 +128,6 @@
 }
 .social-icon.youtube { color: #FF0000; }
 .social-icon.whatsapp { color: #25D366; }
-}
 
 .social-icon.whatsapp:hover { background: #25D366; }
 .social-icon.facebook:hover { background: #1877F2; }
@@ -145,6 +154,217 @@
     height: 3px;
     background: linear-gradient(90deg, #4CAF50, #8BC34A);
     border-radius: 3px;
+}
+
+/* Footer Menu */
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 12px;
+}
+
+.footer-menu a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-menu a:hover {
+    color: #4CAF50;
+}
+
+.footer-menu a i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-menu a:hover i {
+    transform: translateX(3px);
+}
+
+/* Contact Details */
+.contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-text h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 5px;
+}
+
+.contact-text p {
+    color: #e0e0e0;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.contact-text a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+    color: #8BC34A;
+}
+
+/* Business Hours */
+.hours-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.current-time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    background: rgba(10, 74, 10, 0.1);
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.current-time i {
+    color: #4CAF50;
+    font-size: 1.1rem;
+}
+
+#current-time {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+#am-pm {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    margin-left: 4px;
+}
+
+.hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.day {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.time {
+    color: #e0e0e0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .contact-details li {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .hours-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .footer-heading:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 /* Quick Links */
